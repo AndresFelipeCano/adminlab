@@ -14,3 +14,12 @@
 Route::get('/', function () {
     return view('welcome');
 });
+Route::resource('equipo', 'EquiposController');
+Route::resource('usuario', 'UsuariosController');
+Route::resource('prestamo','PrestamosController');
+Route::resource('monitor','MonitorsController');
+Route::resource('categoria','CategoriasController');
+Route::resource('devolucion','DevolucionsController');
+Route::resource('detalleprestamo','DetallesPrestamosController');
+Route::resource('externo','ExternosController');
+
