@@ -15,6 +15,11 @@ class CreateMonitorsTable extends Migration
     {
         Schema::create('monitors', function (Blueprint $table) {
             $table->increments('id');
+            $table->string('nombre');
+            $table->string('apellido');
+            $table->string('correo')->unique();
+            $table->string('numero_celular');
+            $table->integer('numero_horas');
             $table->timestamps();
         });
     }

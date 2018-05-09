@@ -15,6 +15,9 @@ class CreateExternosTable extends Migration
     {
         Schema::create('externos', function (Blueprint $table) {
             $table->increments('id');
+            $table->string('nombre');
+            $table->string('cargo', 10);
+            $table->text('observaciones');
             $table->timestamps();
         });
     }
