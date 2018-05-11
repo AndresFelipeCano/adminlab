@@ -6,9 +6,47 @@
 @import "variables";
 
 // Bootstrap
-@import '~bootstrap/scss/bootstrap';
+@import 'vendor/bootstrap/css/bootstrap.min.css';
 
-.navbar-laravel {
-  background-color: #fff;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.04);
-}
+//font awesome
+@import 'vendor/font-awesome/css/font-awesome.min.css';
+
+//date tables
+@import 'vendor/datatables/dataTables.bootstrap4.css';
+
+//sb admin css
+@import 'sb-admin.css';
+
+// mixins
+@import 'mixins.scss';
+
+// global
+@import 'global.scss';
+
+// utilities
+@iport 'utilities.scss';
+
+// navbar/navbar_global
+@import 'navbar/navbar_global.scss';
+
+// navbar/navbar_fixed
+@import 'navbar/navbar_fixed.scss';
+
+// navbar/navbar_static
+@import 'navbar/navbar_static.scss';
+
+// navbar/navbar_toggle
+@import 'navbar/navbar_toggle.scss';
+
+// navbar/navbar_colors
+@import 'navbar/navbar_colors.scss';
+
+// cards
+@import 'cards.scss';
+
+// login
+@import 'login.scss';
+
+// footer
+@import 'footer.scss';
+
