@@ -43,13 +43,13 @@
           </li>
           <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Tables">
             <a class="nav-link" href="tables.html">
-              <i class="fa fa-fw fa-_561"></i>
+              <i class="fa fa-fw fa-repeat"></i>
               <span class="nav-link-text">Realizar préstamo</span>
             </a>
           </li>
           <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Tables">
             <a class="nav-link" href="tables.html">
-              <i class="fa fa-fw fa-_560"></i>
+              <i class="fa fa-fw fa-refresh"></i>
               <span class="nav-link-text">Realizar Devolución</span>
             </a>
           </li>
