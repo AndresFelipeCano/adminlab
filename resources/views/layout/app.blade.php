@@ -67,7 +67,7 @@
           </li>
           <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Tables">
             <a class="nav-link" href="tables.html">
-              <i class="fa fa-fw fa-user_md"></i>
+              <i class="fa fa-fw icon-user_md"></i>
               <span class="nav-link-text">Registrar Monitor</span>
             </a>
           </li>
