@@ -43,19 +43,19 @@
           </li>
           <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Tables">
             <a class="nav-link" href="tables.html">
-              <i class="fa fa-fw fa-table"></i>
+              <i class="fa fa-fw fa-_561"></i>
               <span class="nav-link-text">Realizar préstamo</span>
             </a>
           </li>
           <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Tables">
             <a class="nav-link" href="tables.html">
-              <i class="fa fa-fw fa-table"></i>
+              <i class="fa fa-fw fa-_560"></i>
               <span class="nav-link-text">Realizar Devolución</span>
             </a>
           </li>
           <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Tables">
             <a class="nav-link" href="tables.html">
-              <i class="fas fa-box"></i>
+              <i class="fa fa-fw fa-dropbox"></i>
               <span class="nav-link-text">Registrar producto</span>
             </a>
           </li>
@@ -67,7 +67,7 @@
           </li>
           <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Tables">
             <a class="nav-link" href="tables.html">
-              <i class="fas fa-user-astronaut"></i>
+              <i class="fa fa-fw fa-user_md"></i>
               <span class="nav-link-text">Registrar Monitor</span>
             </a>
           </li>
