@@ -41,6 +41,36 @@
               <span class="nav-link-text">Tablas</span>
             </a>
           </li>
+          <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Tables">
+            <a class="nav-link" href="tables.html">
+              <i class="fa fa-fw fa-table"></i>
+              <span class="nav-link-text">Realizar préstamo</span>
+            </a>
+          </li>
+          <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Tables">
+            <a class="nav-link" href="tables.html">
+              <i class="fa fa-fw fa-table"></i>
+              <span class="nav-link-text">Realizar Devolución</span>
+            </a>
+          </li>
+          <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Tables">
+            <a class="nav-link" href="tables.html">
+              <i class="fa fa-fw fa-box"></i>
+              <span class="nav-link-text">Registrar producto</span>
+            </a>
+          </li>
+          <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Tables">
+            <a class="nav-link" href="tables.html">
+              <i class="fa fa-fw fa-users"></i>
+              <span class="nav-link-text">Registrar Usuario</span>
+            </a>
+          </li>
+          <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Tables">
+            <a class="nav-link" href="tables.html">
+              <i class="fa fa-fw fa-user-astronaut"></i>
+              <span class="nav-link-text">Registrar Monitor</span>
+            </a>
+          </li>
         </ul>
         <ul class="navbar-nav sidenav-toggler">
           <li class="nav-item">
