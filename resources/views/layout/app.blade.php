@@ -55,7 +55,7 @@
           </li>
           <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Tables">
             <a class="nav-link" href="tables.html">
-              <i class="fa fa-fw fa-box"></i>
+              <i class="fas fa-box"></i>
               <span class="nav-link-text">Registrar producto</span>
             </a>
           </li>
@@ -67,7 +67,7 @@
           </li>
           <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Tables">
             <a class="nav-link" href="tables.html">
-              <i class="fa fa-fw fa-user-astronaut"></i>
+              <i class="fas fa-user-astronaut"></i>
               <span class="nav-link-text">Registrar Monitor</span>
             </a>
           </li>
