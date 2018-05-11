@@ -12,7 +12,7 @@
 */
 
 Route::get('/', function () {
-    return view('layout.app');
+    return redirect('prestamo');
 });
 Route::resource('equipo', 'EquiposController');
 Route::resource('usuario', 'UsuariosController');
@@ -22,4 +22,3 @@ Route::resource('categoria','CategoriasController');
 Route::resource('devolucion','DevolucionsController');
 Route::resource('detalleprestamo','DetallesPrestamosController');
 Route::resource('externo','ExternosController');
-
