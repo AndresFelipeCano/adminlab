@@ -29,44 +29,38 @@
               <span class="nav-link-text">Dashboard</span>
             </a>
           </li>
-          <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Charts">
-            <a class="nav-link" href="charts.html">
-              <i class="fa fa-fw fa-area-chart"></i>
-              <span class="nav-link-text">Graficos</span>
-            </a>
-          </li>
           <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Tables">
-            <a class="nav-link" href="tables.html">
+            <a class="nav-link" href="{{route('tablas')}}">
               <i class="fa fa-fw fa-table"></i>
               <span class="nav-link-text">Tablas</span>
             </a>
           </li>
           <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Tables">
-            <a class="nav-link" href="tables.html">
+            <a class="nav-link" href="{{route('prestamo.create')}}">
               <i class="fa fa-fw fa-repeat"></i>
               <span class="nav-link-text">Realizar préstamo</span>
             </a>
           </li>
           <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Tables">
-            <a class="nav-link" href="tables.html">
+            <a class="nav-link" href="{{route('devolucion.create')}}">
               <i class="fa fa-fw fa-refresh"></i>
               <span class="nav-link-text">Realizar Devolución</span>
             </a>
           </li>
           <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Tables">
-            <a class="nav-link" href="tables.html">
+            <a class="nav-link" href="{{route('equipo.create')}}">
               <i class="fa fa-fw fa-dropbox"></i>
-              <span class="nav-link-text">Registrar producto</span>
+              <span class="nav-link-text">Registrar equipo</span>
             </a>
           </li>
           <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Tables">
-            <a class="nav-link" href="tables.html">
+            <a class="nav-link" href="{{route('usuario.create')}}">
               <i class="fa fa-fw fa-users"></i>
               <span class="nav-link-text">Registrar Usuario</span>
             </a>
           </li>
           <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Tables">
-            <a class="nav-link" href="tables.html">
+            <a class="nav-link" href="{{route('monitor.create')}}">
               <i class="fa fa-fw fa-user"></i>
               <span class="nav-link-text">Registrar Monitor</span>
             </a>

@@ -1197,3 +1197,7 @@ footer.sticky-footer {
   }
 }
 
+.error {
+  color: #df0000;
+}
+

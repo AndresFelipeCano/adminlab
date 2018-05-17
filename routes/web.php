@@ -22,3 +22,4 @@ Route::resource('categoria','CategoriasController');
 Route::resource('devolucion','DevolucionsController');
 Route::resource('detalleprestamo','DetallesPrestamosController');
 Route::resource('externo','ExternosController');
+Route::get('tablas', ['as' => 'tablas', 'uses' => 'Tablas@index']);

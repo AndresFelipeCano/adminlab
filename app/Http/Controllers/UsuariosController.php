@@ -15,6 +15,7 @@ class UsuariosController extends Controller
     public function index()
     {
         //
+        return view('Usuarios.index', ['usuarios' => Usuario::all()]);
     }
 
     /**
@@ -25,6 +26,7 @@ class UsuariosController extends Controller
     public function create()
     {
         //
+        return view('Usuarios.create');
     }
 
     /**
@@ -36,6 +38,18 @@ class UsuariosController extends Controller
     public function store(Request $request)
     {
         //
+        $this->validate($request, [
+          'id_upb' => 'required',
+          'correo' => 'email | required',
+          'nombre' => 'required',
+          'apellido' => 'required',
+          'telefono' => 'required',
+          'cargo' => 'required',
+          'carrera' => 'required'
+        ]);
+        Usuario::create($request -> all());
+
+        return redirect()->route('usuario.index');
     }
 
     /**
@@ -47,6 +61,7 @@ class UsuariosController extends Controller
     public function show(Usuario $usuario)
     {
         //
+        return view('Usuarios.show', ['usuario' => $usuario]);
     }
 
     /**
@@ -58,6 +73,7 @@ class UsuariosController extends Controller
     public function edit(Usuario $usuario)
     {
         //
+        return view('Usuarios.edit', ['usuario' => $usuario]);
     }
 
     /**
@@ -70,6 +86,8 @@ class UsuariosController extends Controller
     public function update(Request $request, Usuario $usuario)
     {
         //
+        $usuario->update($request->all());
+        return redirect()->route('usuario.index');
     }
 
     /**
@@ -81,5 +99,7 @@ class UsuariosController extends Controller
     public function destroy(Usuario $usuario)
     {
         //
+        $usuario->delete();
+        return redirect()->route('usuario.index');
     }
 }

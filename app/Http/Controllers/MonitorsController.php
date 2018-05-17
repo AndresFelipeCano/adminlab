@@ -15,6 +15,10 @@ class MonitorsController extends Controller
     public function index()
     {
         //
+        $monitores = Monitor::all();
+        return view('Monitores.index', [
+          'monitores' => $monitores
+        ]);
     }
 
     /**
@@ -24,7 +28,7 @@ class MonitorsController extends Controller
      */
     public function create()
     {
-        //
+        return view('Monitores.create');
     }
 
     /**
@@ -36,6 +40,17 @@ class MonitorsController extends Controller
     public function store(Request $request)
     {
         //
+
+        $this->validate($request, [
+          'id_upb' => 'required',
+          'correo' => 'email | required',
+          'nombre' => 'required',
+          'apellido' => 'required',
+          'numero_celular' => 'required'
+        ]);
+        Monitor::create($request->all());
+
+        return redirect()->route('monitor.index');
     }
 
     /**
@@ -47,6 +62,7 @@ class MonitorsController extends Controller
     public function show(Monitor $monitor)
     {
         //
+        return view('Monitores.show',['monitor' => $monitor]);
     }
 
     /**
@@ -58,6 +74,7 @@ class MonitorsController extends Controller
     public function edit(Monitor $monitor)
     {
         //
+        return view('Monitores.edit', ['monitor' => $monitor]);
     }
 
     /**
@@ -70,6 +87,8 @@ class MonitorsController extends Controller
     public function update(Request $request, Monitor $monitor)
     {
         //
+        $monitor->update($request->all());
+        return redirect()->route('monitor.index');
     }
 
     /**
@@ -81,5 +100,7 @@ class MonitorsController extends Controller
     public function destroy(Monitor $monitor)
     {
         //
+        $monitor->delete();
+        return redirect()->route('monitor.index');
     }
 }
