@@ -1,5 +1,6 @@
 <?php
 
+use Carbon\Carbon;
 use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
@@ -19,6 +20,7 @@ class CreatePrestamosTable extends Migration
             $table->integer('id_usuario');
             $table->integer('id_equipo');
             $table->integer('id_detalles');
+            $table->text('today');
             $table->timestamps();
         });
     }

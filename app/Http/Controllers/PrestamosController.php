@@ -15,6 +15,12 @@ class PrestamosController extends Controller
     public function index()
     {
         //
+        $dates = Prestamo::all()->pluck('today')->unique()->toArray();
+        $values;
+        for($i = 0; $i < count($dates); $i++){
+          $values[$i] = count(Prestamo::all()->where('today', $dates[$i]));
+        }
+        dd($dates, $values);
         return view('Prestamos.index',['prestamos' => Prestamo::all()]);
     }
 
@@ -37,6 +43,14 @@ class PrestamosController extends Controller
     public function store(Request $request)
     {
         //
+        $this->validate($request, [
+          'id_monitor' => 'required',
+          'id_usuario' => 'required',
+          'id_equipo' => 'required',
+        ]);
+        $prestamo = Prestamo::Create($request->all());
+        $prestamo->today = Carbon::now()->toDateString();
+        return redirect()->route('prestamo');
     }
 
     /**

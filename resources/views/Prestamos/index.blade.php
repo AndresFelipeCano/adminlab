@@ -33,6 +33,7 @@
       </div>
       <div class="card-footer small text-muted">Updated yesterday at 11:59 PM</div>
     </div>
+    
     <!-- Tabla donde visualizaremos los prestamos-->
     <div class="card mb-3">
       <div class="card-header">
