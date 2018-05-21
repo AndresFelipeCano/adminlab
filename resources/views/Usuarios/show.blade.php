@@ -1,6 +1,6 @@
 @extends('layout.app')
 
-@section('title', "Crear Monitor");
+@section('title', "Show Usuario");
 
 {{--Section: content --}}
 @section('content')
