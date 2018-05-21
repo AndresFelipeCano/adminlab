@@ -17,11 +17,19 @@ class PrestamosController extends Controller
         //
         $dates = Prestamo::all()->pluck('today')->unique()->toArray();
         $values;
-        for($i = 0; $i < count($dates); $i++){
-          $values[$i] = count(Prestamo::all()->where('today', $dates[$i]));
+        $i = 0;
+        foreach($dates as $date){
+          $values[$i] =  count(Prestamo::all()->where('today', $date));
+          $i++;
         }
-        dd($dates, $values);
-        return view('Prestamos.index',['prestamos' => Prestamo::all()]);
+
+        return view('Prestamos.index',[
+
+          'prestamos' => Prestamo::all(),
+          'dates' => $dates,
+          'values' => $values
+
+        ]);
     }
 
     /**
