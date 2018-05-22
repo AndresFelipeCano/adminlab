@@ -52,7 +52,13 @@ class PrestamosController extends Controller
     public function store(Request $request)
     {
         //
-        
+        $this->validate($request, [
+          'id_monitor' => 'required',
+          'id_usuario' => 'required',
+          'id_equipo' => 'required',
+          'id_detalles' => 'required',
+          'today' => 'required'
+        ]);
         Prestamo::Create($request->all());
         return redirect()->route('prestamo.index');
     }

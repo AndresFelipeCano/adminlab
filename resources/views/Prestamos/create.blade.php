@@ -25,7 +25,7 @@
         </li>
         <li class="breadcrumb-item active"><a href="{{route('prestamo.index')}}">Prestamo</a></li>
       </ol>
-      <form class="" action="{{route('usuario.store')}}" method="post">
+      <form class="" action="{{route('prestamo.store')}}" method="post">
         {{ csrf_field() }}
         <div class="form-row">
           <div class="form-group col-lg-6 col-md-6 col-sm-12">
