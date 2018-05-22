@@ -8,6 +8,6 @@ class Externo extends Model
 {
     //
     protected $fillable=[
-      'nombre', 'cargo', 'observaciones'
+      'nombre', 'apellido', 'cargo', 'observaciones', 'correo'
     ];
 }

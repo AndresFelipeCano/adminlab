@@ -40,8 +40,10 @@ class ExternosController extends Controller
         //
         $this->validate($request, [
           'nombre' => 'required',
+          'apellido' => 'required',
           'cargo' => 'required',
           'observaciones' => 'required'
+          'correo' => 'emial|required'
         ]);
         Externo::create($request->all());
         return redirect()->route('externo.index');
