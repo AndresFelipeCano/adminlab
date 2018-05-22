@@ -21,7 +21,7 @@
       <!-- Breadcrumbs-->
       <ol class="breadcrumb">
         <li class="breadcrumb-item">Crear
-          
+
         </li>
         <li class="breadcrumb-item active"><a href="{{route('prestamo.index')}}">Prestamo</a></li>
       </ol>
@@ -47,6 +47,11 @@
             <label for="id_detalles">ID Detalles</label>
             <input type="number" name="id_detalles" placeholder="ID Detalles" class="form-control" value="{{old('id_detalles')}}">
             {!!$errors->first('id_detalles', '<span class=error>:message</span>')!!}
+          </div>
+          <div class="form-group col-lg-6 col-md-6 col-sm-12">
+            <label for="today">Fecha de hoy</label>
+            <input type="text" name="today" placeholder="" class="form-control" value="{{$today}}">
+            {!!$errors->first('today', '<span class=error>:message</span>')!!}
           </div>
         </div>
         <button type="submit" class="btn btn-primary">Enviar</button>

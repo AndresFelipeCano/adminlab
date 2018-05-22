@@ -38,7 +38,8 @@ class PrestamosController extends Controller
     public function create()
     {
         //
-        return view('Prestamos.create');
+        $today = Carbon::now()->toDateString();
+        return view('Prestamos.create', compatc('today'));
     }
 
     /**
@@ -54,9 +55,10 @@ class PrestamosController extends Controller
           'id_monitor' => 'required',
           'id_usuario' => 'required',
           'id_equipo' => 'required'
+          'id_detalles' => 'required'
+          'today' => 'required'
         ]);
-        $prestamo = Prestamo::Create($request->all());
-        $prestamo->today = Carbon::now()->toDateString();
+        Prestamo::Create($request->all());
         return redirect()->route('prestamo.index');
     }
 
