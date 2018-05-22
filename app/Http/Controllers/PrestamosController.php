@@ -3,7 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Prestamo;
-use Cabron\Carbon;
+use Carbon\Carbon;
 use Illuminate\Http\Request;
 
 class PrestamosController extends Controller
