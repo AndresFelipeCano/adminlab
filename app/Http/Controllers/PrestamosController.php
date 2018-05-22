@@ -55,7 +55,7 @@ class PrestamosController extends Controller
           'id_monitor' => 'required',
           'id_usuario' => 'required',
           'id_equipo' => 'required',
-          'id_detalles' => 'required'
+          'id_detalles' => 'required',
           'today' => 'required'
         ]);
         Prestamo::Create($request->all());
