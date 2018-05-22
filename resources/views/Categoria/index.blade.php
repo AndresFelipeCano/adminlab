@@ -36,7 +36,7 @@
           <tbody>
             @foreach($categorias as $categoria)
               <tr>
-                <td><a href="{{route('categoria.show', $usuario)}}">{{$categoria->nombre}}</a></td>
+                <td><a href="{{route('categoria.show', $categoria)}}">{{$categoria->nombre}}</a></td>
                 <td>{{$categoria->detalles}}</td>
               </tr>
             @endforeach
