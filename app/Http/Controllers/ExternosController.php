@@ -42,7 +42,7 @@ class ExternosController extends Controller
           'nombre' => 'required',
           'apellido' => 'required',
           'cargo' => 'required',
-          'observaciones' => 'required'
+          'observaciones' => 'required',
           'correo' => 'emial|required'
         ]);
         Externo::create($request->all());

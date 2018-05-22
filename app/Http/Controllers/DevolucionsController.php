@@ -40,7 +40,7 @@ class DevolucionsController extends Controller
         //
         $this->validate($request, [
           'id_prestamo' => 'required',
-          'carga_bateria' => 'required'
+          'carga_bateria' => 'required',
           'observaciones' => 'required'
         ]);
         Devolucion::create($request->all());
