@@ -35,7 +35,7 @@
             </tr>
           </thead>
           <tbody>
-            @foreach($usuarios as $usuario)
+            @foreach($devoluciones as $devolucion)
               <tr>
                 <td><a href="{{route('Devoluciones.show', $devolucion)}}">{{$devolucion->id_prestamo}}</a></td>
                 <td>{{$devolucion->carga_bateria}}</td>
