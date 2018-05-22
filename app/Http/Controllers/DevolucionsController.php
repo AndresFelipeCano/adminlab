@@ -57,7 +57,7 @@ class DevolucionsController extends Controller
     public function show(Devolucion $devolucion)
     {
         //
-        return view('Devoluciones.show', ['devoluciones' => $devolucion]);
+        return view('Devoluciones.show', ['devolucion' => $devolucion]);
     }
 
     /**
@@ -69,7 +69,7 @@ class DevolucionsController extends Controller
     public function edit(Devolucion $devolucion)
     {
         //
-        return view('Devoluciones.edit', ['devoluciones' => $devolucion]);
+        return view('Devoluciones.edit', ['devolucion' => $devolucion]);
     }
 
     /**
