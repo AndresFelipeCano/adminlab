@@ -24,11 +24,9 @@ class PrestamosController extends Controller
         }
 
         return view('Prestamos.index',[
-
           'prestamos' => Prestamo::all(),
           'dates' => $dates,
           'values' => $values
-
         ]);
     }
 
@@ -71,7 +69,7 @@ class PrestamosController extends Controller
     public function show(Prestamo $prestamo)
     {
         //
-        return view('Prestamos.show' ['prestamo' => $prestamo]);
+        return view('Prestamos.show', ['prestamo' => $prestamo]);
     }
 
     /**
