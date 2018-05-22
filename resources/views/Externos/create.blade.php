@@ -20,12 +20,11 @@
     <div class="container">
       <!-- Breadcrumbs-->
       <ol class="breadcrumb">
-        <li class="breadcrumb-item">
-          <a href="#">Crear</a>
+        <li class="breadcrumb-item">Crear
         </li>
-        <li class="breadcrumb-item active">Externo</li>
+        <li class="breadcrumb-item active"><a href="{{route('externo.index')}}">Externo</a></li>
       </ol>
-      <form class="" action="{{route('externos.store')}}" method="post">
+      <form class="" action="{{route('externo.store')}}" method="post">
         {{ csrf_field() }}
         <div class="form-row">
           <div class="form-group col-lg-6 col-md-6 col-sm-12">

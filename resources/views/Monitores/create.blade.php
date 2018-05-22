@@ -20,10 +20,9 @@
     <div class="container">
       <!-- Breadcrumbs-->
       <ol class="breadcrumb">
-        <li class="breadcrumb-item">
-          <a href="#">Crear</a>
+        <li class="breadcrumb-item">Crear
         </li>
-        <li class="breadcrumb-item active">Monitor</li>
+        <li class="breadcrumb-item active"><a href="{{route('monitor.index')}}">Monitor</a></li>
       </ol>
       <form class="" action="{{route('monitor.store')}}" method="post">
         {{ csrf_field() }}

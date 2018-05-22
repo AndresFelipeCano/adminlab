@@ -20,12 +20,11 @@
     <div class="container">
       <!-- Breadcrumbs-->
       <ol class="breadcrumb">
-        <li class="breadcrumb-item">
-          <a href="#">Crear</a>
+        <li class="breadcrumb-item">Crear
         </li>
-        <li class="breadcrumb-item active">Detalles</li>
+        <li class="breadcrumb-item active"><a href="{{route('detalleprestamo.index')}}">Detalles</a></li>
       </ol>
-      <form class="" action="{{route('detalles.store')}}" method="post">
+      <form class="" action="{{route('detalleprestamo.store')}}" method="post">
         {{ csrf_field() }}
         <div class="form-row">
           <div class="form-group col-lg-6 col-md-6 col-sm-12">

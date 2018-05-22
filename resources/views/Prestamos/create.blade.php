@@ -23,7 +23,7 @@
         <li class="breadcrumb-item">
           <a href="#">Crear</a>
         </li>
-        <li class="breadcrumb-item active">Prestamo</li>
+        <li class="breadcrumb-item active"><a href="{{route('prestamo.index')}}"></a>Prestamo</li>
       </ol>
       <form class="" action="{{route('usuario.store')}}" method="post">
         {{ csrf_field() }}

@@ -38,7 +38,7 @@
           <tbody>
             @foreach($detallesPrestamos as $detallesPrestamo)
               <tr>
-                <td><a href="{{route('usuario.show', $usuario)}}">{{$detallesPrestamos->id}}</a></td>
+                <td><a href="{{route('detallesprestamo.show', $usuario)}}">{{$detallesPrestamos->id}}</a></td>
                 <td>{{$detallesPrestamos->id_externo}}</td>
                 <td>{{$detallesPrestamos->detalles}}</td>
               </tr>

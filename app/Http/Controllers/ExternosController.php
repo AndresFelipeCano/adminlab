@@ -15,7 +15,7 @@ class ExternosController extends Controller
     public function index()
     {
         //
-        return view('Externos.index', ['externos' => Devolucion::all()]);
+        return view('Externos.index', ['externos' => Externo::all()]);
     }
 
     /**

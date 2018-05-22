@@ -15,7 +15,7 @@ class DetallesPrestamosController extends Controller
     public function index()
     {
         //
-        return view('Detalles.index', ['detallesPrestamos' => DestallesPrestamo::all()]);
+        return view('Detalles.index', ['detallesPrestamos' => DetallesPrestamo::all()]);
     }
 
     /**

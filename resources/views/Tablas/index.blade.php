@@ -21,33 +21,51 @@
       <!-- Breadcrumbs-->
       <ol class="breadcrumb">
         <li class="breadcrumb-item">
-          <a href="#">Ver</a>
+          <a href="{{route('usuario.index')}}">Ver</a>
         </li>
         <li class="breadcrumb-item active">Usuarios</li>
       </ol>
       <ol class="breadcrumb">
         <li class="breadcrumb-item">
-          <a href="#">Ver</a>
+          <a href="{{route('monitor.index')}}">Ver</a>
         </li>
         <li class="breadcrumb-item active">Monitores</li>
       </ol>
       <ol class="breadcrumb">
         <li class="breadcrumb-item">
-          <a href="#">Ver</a>
+          <a href="{{route('equipo.index')}}">Ver</a>
         </li>
-        <li class="breadcrumb-item active">Dispositivos</li>
+        <li class="breadcrumb-item active">Equipos</li>
       </ol>
       <ol class="breadcrumb">
         <li class="breadcrumb-item">
-          <a href="#">Ver</a>
+          <a href="{{route('prestamo.index')}}">Ver</a>
         </li>
         <li class="breadcrumb-item active">Prestamos</li>
       </ol>
       <ol class="breadcrumb">
         <li class="breadcrumb-item">
-          <a href="#">Ver</a>
+          <a href="{{route('devolucion.index')}}">Ver</a>
         </li>
         <li class="breadcrumb-item active">Devoluciones</li>
+      </ol>
+      <ol class="breadcrumb">
+        <li class="breadcrumb-item">
+          <a href="{{route('categoria.index')}}">Ver</a>
+        </li>
+        <li class="breadcrumb-item active">Categoría</li>
+      </ol>
+      <ol class="breadcrumb">
+        <li class="breadcrumb-item">
+          <a href="{{route('detalleprestamo.index')}}">Ver</a>
+        </li>
+        <li class="breadcrumb-item active">Detalles</li>
+      </ol>
+      <ol class="breadcrumb">
+        <li class="breadcrumb-item">
+          <a href="{{route('externo.index')}}">Ver</a>
+        </li>
+        <li class="breadcrumb-item active">Externo</li>
       </ol>
     </div>
   </div>

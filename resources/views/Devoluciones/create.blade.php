@@ -20,10 +20,9 @@
     <div class="container">
       <!-- Breadcrumbs-->
       <ol class="breadcrumb">
-        <li class="breadcrumb-item">
-          <a href="#">Crear</a>
+        <li class="breadcrumb-item">Crear
         </li>
-        <li class="breadcrumb-item active">Devolcuión</li>
+        <li class="breadcrumb-item active"><a href="{{route('devolucion.index')}}">Devolcuión</a></li>
       </ol>
       <form class="" action="{{route('devolucion.store')}}" method="post">
         {{ csrf_field() }}
