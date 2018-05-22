@@ -9,7 +9,9 @@ class Todo extends Model
     //
     use SyncsWithFirebase;
 
-    protected $fillable = ['task', 'is_done'];
+    protected $fillable = [
+      'task', 'is_done'
+    ];
 
     protected $visible = ['id', 'task', 'is_done'];
 }

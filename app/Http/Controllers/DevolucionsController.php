@@ -25,6 +25,7 @@ class DevolucionsController extends Controller
     public function create()
     {
         //
+        return view('Devoluciones.index', ['devoluciones' => Devolucion::all()]);
     }
 
     /**
@@ -47,6 +48,7 @@ class DevolucionsController extends Controller
     public function show(Devolucion $devolucion)
     {
         //
+        return view('Devoluciones.show', ['devoluciones' => $devolucion]);
     }
 
     /**
@@ -58,6 +60,7 @@ class DevolucionsController extends Controller
     public function edit(Devolucion $devolucion)
     {
         //
+        return view('Devoluciones.edit', ['devoluciones' => $devolucion]);
     }
 
     /**

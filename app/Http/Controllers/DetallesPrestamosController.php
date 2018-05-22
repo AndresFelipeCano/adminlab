@@ -25,6 +25,7 @@ class DetallesPrestamosController extends Controller
     public function create()
     {
         //
+        return view('Detalles.index', ['categorias' => DestallesPrestamo::all()]);
     }
 
     /**
@@ -47,6 +48,7 @@ class DetallesPrestamosController extends Controller
     public function show(DetallesPrestamo $detallesPrestamo)
     {
         //
+        return view('Detalles.show', ['detalles' => $detallesPrestamo]);
     }
 
     /**
@@ -58,6 +60,7 @@ class DetallesPrestamosController extends Controller
     public function edit(DetallesPrestamo $detallesPrestamo)
     {
         //
+        return view('Detalles.edit', ['detalles' => $detallesPrestamo]);
     }
 
     /**

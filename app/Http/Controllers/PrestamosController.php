@@ -81,6 +81,7 @@ class PrestamosController extends Controller
     public function edit(Prestamo $prestamo)
     {
         //
+        return view('Prestamos.edit', ['prestamo' => $prestamo]);
     }
 
     /**

@@ -15,6 +15,7 @@ class ExternosController extends Controller
     public function index()
     {
         //
+        return view('Externos.index', ['externos' => Devolucion::all()]);
     }
 
     /**
@@ -25,6 +26,7 @@ class ExternosController extends Controller
     public function create()
     {
         //
+
     }
 
     /**
@@ -47,6 +49,7 @@ class ExternosController extends Controller
     public function show(Externo $externo)
     {
         //
+        return view('Externos.show', ['externo' => $externo]);
     }
 
     /**
@@ -58,6 +61,7 @@ class ExternosController extends Controller
     public function edit(Externo $externo)
     {
         //
+        return view('Externos.edit', ['externo' => $externo]);
     }
 
     /**

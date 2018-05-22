@@ -15,6 +15,7 @@ class EquiposController extends Controller
     public function index()
     {
         //
+        return view('Equipos.index', ['equipos' => Equipo::all()]);
     }
 
     /**
@@ -25,6 +26,7 @@ class EquiposController extends Controller
     public function create()
     {
         //
+
     }
 
     /**
@@ -47,6 +49,7 @@ class EquiposController extends Controller
     public function show(Equipo $equipo)
     {
         //
+        return view('Equipo.show', ['equipo' => $equipo]);
     }
 
     /**
@@ -58,6 +61,7 @@ class EquiposController extends Controller
     public function edit(Equipo $equipo)
     {
         //
+        return view('Equipo.edit', ['equipo' => $equipo]);
     }
 
     /**

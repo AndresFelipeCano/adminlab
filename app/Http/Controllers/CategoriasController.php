@@ -15,6 +15,7 @@ class CategoriasController extends Controller
     public function index()
     {
         //
+        return view('Categoria.index', ['categorias' => Categoria::all()]);
     }
 
     /**
@@ -47,6 +48,7 @@ class CategoriasController extends Controller
     public function show(Categoria $categoria)
     {
         //
+        return view('Categoria.show', ['categoria' => $categoria]);
     }
 
     /**
@@ -58,6 +60,7 @@ class CategoriasController extends Controller
     public function edit(Categoria $categoria)
     {
         //
+        return view('Categoria.edit', ['categoria' => $categoria]);
     }
 
     /**
