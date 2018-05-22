@@ -20,7 +20,7 @@ class CreatePrestamosTable extends Migration
             $table->integer('id_usuario');
             $table->integer('id_equipo');
             $table->integer('id_detalles')->nullable();
-            $table->text('today');
+            $table->text('today')->nullable();
             $table->timestamps();
         });
     }
