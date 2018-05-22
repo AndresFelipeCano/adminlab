@@ -15,6 +15,7 @@ class DevolucionsController extends Controller
     public function index()
     {
         //
+        return view('Devoluciones.index', ['devoluciones' => Devolucion::all()]);
     }
 
     /**
@@ -25,7 +26,7 @@ class DevolucionsController extends Controller
     public function create()
     {
         //
-        return view('Devoluciones.index', ['devoluciones' => Devolucion::all()]);
+        return view('Devoluciones.create');
     }
 
     /**
@@ -37,6 +38,14 @@ class DevolucionsController extends Controller
     public function store(Request $request)
     {
         //
+        $this->validate($request, [
+          'id_prestamo' => 'required',
+          'carga_bateria' => 'required'
+          'observaciones' => 'required'
+        ]);
+        Devolucion::create($request->all());
+
+        return redirect()->route('devolucion.index');
     }
 
     /**
@@ -73,6 +82,8 @@ class DevolucionsController extends Controller
     public function update(Request $request, Devolucion $devolucion)
     {
         //
+        $devolucion->update($request->all());
+        return redirect()->route('devolucion.index');
     }
 
     /**
@@ -84,5 +95,7 @@ class DevolucionsController extends Controller
     public function destroy(Devolucion $devolucion)
     {
         //
+        $devolucion->delete();
+        return redirect()->route('devolucion.index');
     }
 }

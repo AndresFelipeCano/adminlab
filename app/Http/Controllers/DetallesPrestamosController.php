@@ -37,6 +37,13 @@ class DetallesPrestamosController extends Controller
     public function store(Request $request)
     {
         //
+        $this->validate($request, [
+          'id_prestamo' => 'required',
+          'id_externo' => 'required',
+          'detalles' => 'required'
+        ]);
+        DetallesPrestamo::create($request->all());
+        return redirect()->route('detallesprestamo.index');
     }
 
     /**
@@ -73,6 +80,8 @@ class DetallesPrestamosController extends Controller
     public function update(Request $request, DetallesPrestamo $detallesPrestamo)
     {
         //
+        $detallesPrestamo->update($request->all());
+        return redirect()->route('detallesprestamo.index');
     }
 
     /**
@@ -84,5 +93,7 @@ class DetallesPrestamosController extends Controller
     public function destroy(DetallesPrestamo $detallesPrestamo)
     {
         //
+        $detallesPrestamo->delete();
+        return redirect()->route('detallesprestamo.index');
     }
 }

@@ -40,6 +40,7 @@ class PrestamosController extends Controller
     public function create()
     {
         //
+        return view('Prestamos.create');
     }
 
     /**
@@ -58,7 +59,7 @@ class PrestamosController extends Controller
         ]);
         $prestamo = Prestamo::Create($request->all());
         $prestamo->today = Carbon::now()->toDateString();
-        return redirect()->route('prestamo');
+        return redirect()->route('prestamo.index');
     }
 
     /**
@@ -70,6 +71,7 @@ class PrestamosController extends Controller
     public function show(Prestamo $prestamo)
     {
         //
+        return view('Prestamos.show' ['prestamo' => $prestamo]);
     }
 
     /**
@@ -94,6 +96,8 @@ class PrestamosController extends Controller
     public function update(Request $request, Prestamo $prestamo)
     {
         //
+        $prestamo->update($request->all());
+        return redirect()->route('prestamo.index');
     }
 
     /**
@@ -105,5 +109,7 @@ class PrestamosController extends Controller
     public function destroy(Prestamo $prestamo)
     {
         //
+        $prestamo->delete();
+        return redirect()->route('prestamo.index');
     }
 }

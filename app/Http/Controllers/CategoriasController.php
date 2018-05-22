@@ -26,6 +26,7 @@ class CategoriasController extends Controller
     public function create()
     {
         //
+        return view('Categoria.create');
     }
 
     /**
@@ -37,6 +38,14 @@ class CategoriasController extends Controller
     public function store(Request $request)
     {
         //
+        $this->validate($request, [
+          'nombre' => 'required',
+          'detalles' => 'required'
+
+        ]);
+        Categoria::create($request->all());
+
+        return redirect()->route('categoria.index');
     }
 
     /**
@@ -73,6 +82,8 @@ class CategoriasController extends Controller
     public function update(Request $request, Categoria $categoria)
     {
         //
+        $categoria->update($request->all());
+        return redirect()->route('categoria.index');
     }
 
     /**
@@ -84,5 +95,7 @@ class CategoriasController extends Controller
     public function destroy(Categoria $categoria)
     {
         //
+        $categoria->delete();
+        return redirect()->route('categoria.index');
     }
 }

@@ -8,6 +8,6 @@ class Devolucion extends Model
 {
     //
     protected $fillable = [
-      'id_prestamo', 'carga_bateria'
+      'id_prestamo', 'carga_bateria', 'observaciones'
     ];
 }

@@ -26,7 +26,7 @@ class ExternosController extends Controller
     public function create()
     {
         //
-
+        return view('Externos.create');
     }
 
     /**
@@ -38,6 +38,13 @@ class ExternosController extends Controller
     public function store(Request $request)
     {
         //
+        $this->validate($request, [
+          'nombre' => 'required',
+          'cargo' => 'required',
+          'observaciones' => 'required'
+        ]);
+        Externo::create($request->all());
+        return redirect()->route('externo.index');
     }
 
     /**
@@ -74,6 +81,8 @@ class ExternosController extends Controller
     public function update(Request $request, Externo $externo)
     {
         //
+        $externo->update($request->all());
+        return redirect()->route('externo.index');
     }
 
     /**
@@ -85,5 +94,7 @@ class ExternosController extends Controller
     public function destroy(Externo $externo)
     {
         //
+        $externo->delete();
+        return redirect()->route('externo.index');
     }
 }

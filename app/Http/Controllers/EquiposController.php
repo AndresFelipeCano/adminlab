@@ -26,7 +26,7 @@ class EquiposController extends Controller
     public function create()
     {
         //
-
+        return view('Equipos.create');
     }
 
     /**
@@ -38,6 +38,14 @@ class EquiposController extends Controller
     public function store(Request $request)
     {
         //
+        $this->validate($request, [
+          'id_categoria' => 'required',
+          'estado' => 'required',
+          'observaciones' => 'required',
+          'numero_equipo' => 'required'
+        ]);
+        Equipo::create($request->all());
+        return redirect()->route('equipo.index');
     }
 
     /**
@@ -74,6 +82,8 @@ class EquiposController extends Controller
     public function update(Request $request, Equipo $equipo)
     {
         //
+        $equipo->update($request->all());
+        return redirect()->route('equipo.index');
     }
 
     /**
@@ -85,5 +95,7 @@ class EquiposController extends Controller
     public function destroy(Equipo $equipo)
     {
         //
+        $usuario->delete();
+        return redirect()->route('equipo.index');
     }
 }
