@@ -15,7 +15,7 @@ class MonitorsController extends Controller
     public function index()
     {
         //
-        return view('Monitores.index', ['monitor' => Monitor::all()]);
+        return view('Monitores.index', ['monitores' => Monitor::all()]);
     }
 
     /**

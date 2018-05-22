@@ -15,6 +15,7 @@ class DetallesPrestamosController extends Controller
     public function index()
     {
         //
+        return view('Detalles.index', ['detallesPrestamos' => DestallesPrestamo::all()]);
     }
 
     /**
@@ -25,7 +26,8 @@ class DetallesPrestamosController extends Controller
     public function create()
     {
         //
-        return view('Detalles.index', ['categorias' => DestallesPrestamo::all()]);
+        return view('Detalles.create');
+
     }
 
     /**
@@ -55,7 +57,7 @@ class DetallesPrestamosController extends Controller
     public function show(DetallesPrestamo $detallesPrestamo)
     {
         //
-        return view('Detalles.show', ['detalles' => $detallesPrestamo]);
+        return view('Detalles.show', ['detallesPrestamo' => $detallesPrestamo]);
     }
 
     /**
@@ -67,7 +69,7 @@ class DetallesPrestamosController extends Controller
     public function edit(DetallesPrestamo $detallesPrestamo)
     {
         //
-        return view('Detalles.edit', ['detalles' => $detallesPrestamo]);
+        return view('Detalles.edit', ['detallesPrestamo' => $detallesPrestamo]);
     }
 
     /**
