@@ -53,7 +53,7 @@ class PrestamosController extends Controller
         $this->validate($request, [
           'id_monitor' => 'required',
           'id_usuario' => 'required',
-          'id_equipo' => 'required',
+          'id_equipo' => 'required'
         ]);
         $prestamo = Prestamo::Create($request->all());
         $prestamo->today = Carbon::now()->toDateString();
