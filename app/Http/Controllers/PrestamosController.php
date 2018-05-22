@@ -16,7 +16,7 @@ class PrestamosController extends Controller
     {
         //
         $dates = Prestamo::all()->pluck('today')->unique()->toArray();
-        $values;
+        $values[0] = 0;
         $i = 0;
         foreach($dates as $date){
           $values[$i] =  count(Prestamo::all()->where('today', $date));
