@@ -8,6 +8,6 @@ class Prestamo extends Model
 {
     //
     protected $fillable = [
-      'id_monitor', 'id_usuario', 'id_equipo', 'today'
+      'id_monitor', 'id_usuario', 'id_equipo', 'today', 'id_detalles'
     ];
 }
