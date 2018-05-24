@@ -59,7 +59,6 @@ return [
         'sqlite' => [
           /*paste connection here */
             'driver' => 'sqlite',
-            'database' => env('DB_DATABASE', database_path('database.sqlite')),
             'prefix' => '',
             'host' => RDS_HOSTNAME,
             'database' => RDS_DB_NAME,
