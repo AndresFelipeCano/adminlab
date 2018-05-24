@@ -1,4 +1,5 @@
 <!DOCTYPE html>
+
 <html lang="{{app()->getLocale()}}">
   <head>
     <meta charset="utf-8">
@@ -57,12 +58,6 @@
             <a class="nav-link" href="{{route('usuario.create')}}">
               <i class="fa fa-fw fa-users"></i>
               <span class="nav-link-text">Registrar Usuario</span>
-            </a>
-          </li>
-          <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Tables">
-            <a class="nav-link" href="{{route('monitor.create')}}">
-              <i class="fa fa-fw fa-user"></i>
-              <span class="nav-link-text">Registrar Monitor</span>
             </a>
           </li>
           <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Tables">
@@ -125,7 +120,12 @@
           <div class="modal-body">¿Seguro de que quieres cerrar la sesión?</div>
           <div class="modal-footer">
             <button class="btn btn-secondary" type="button" data-dismiss="modal">Cancelar</button>
-            <a class="btn btn-primary" href="login.html">Salir</a>
+
+            <a class="btn btn-primary" href="route{{'logout'}}" onclick="event.preventDefault();document.getElementById('logout-form').submit();">{{__('Salir')}}
+            </a>
+            <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+                @csrf
+            </form>
           </div>
         </div>
       </div>

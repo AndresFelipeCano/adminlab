@@ -12,7 +12,7 @@
 */
 
 Route::get('/', function () {
-    return redirect('prestamo');
+    return redirect('home');
 });
 Route::resource('equipo', 'EquiposController');
 Route::resource('usuario', 'UsuariosController');
@@ -23,3 +23,7 @@ Route::resource('devolucion','DevolucionsController');
 Route::resource('detalleprestamo','DetallesPrestamosController');
 Route::resource('externo','ExternosController');
 Route::get('tablas', ['as' => 'tablas', 'uses' => 'Tablas@index']);
+
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');

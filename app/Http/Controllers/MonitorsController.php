@@ -2,11 +2,16 @@
 
 namespace App\Http\Controllers;
 
-use App\Monitor;
+use App\User;
 use Illuminate\Http\Request;
 
 class MonitorsController extends Controller
 {
+  public function __construct()
+  {
+
+    $this->middleware('auth');
+  }
     /**
      * Display a listing of the resource.
      *
@@ -15,7 +20,7 @@ class MonitorsController extends Controller
     public function index()
     {
         //
-        return view('Monitores.index', ['monitores' => Monitor::all()]);
+        return view('Monitores.index', ['monitores' => User::all()]);
     }
 
     /**
