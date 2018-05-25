@@ -30,38 +30,15 @@ class MonitorsController extends Controller
      */
     public function create()
     {
-        return view('Monitores.create');
+        return redirect('/register');
     }
-
-    /**
-     * Store a newly created resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\Response
-     */
-    public function store(Request $request)
-    {
-        //
-
-        $this->validate($request, [
-          'id_upb' => 'required',
-          'correo' => 'email | required',
-          'nombre' => 'required',
-          'apellido' => 'required',
-          'numero_celular' => 'required'
-        ]);
-        Monitor::create($request->all());
-
-        return redirect()->route('monitor.index');
-    }
-
     /**
      * Display the specified resource.
      *
      * @param  \App\Monitor  $monitor
      * @return \Illuminate\Http\Response
      */
-    public function show(Monitor $monitor)
+    public function show(User $monitor)
     {
         //
         return view('Monitores.show',['monitor' => $monitor]);
@@ -73,9 +50,10 @@ class MonitorsController extends Controller
      * @param  \App\Monitor  $monitor
      * @return \Illuminate\Http\Response
      */
-    public function edit(Monitor $monitor)
+    public function edit(User $monitor)
     {
         //
+        
         return view('Monitores.edit', ['monitor' => $monitor]);
     }
 
@@ -86,7 +64,7 @@ class MonitorsController extends Controller
      * @param  \App\Monitor  $monitor
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Monitor $monitor)
+    public function update(Request $request, User $monitor)
     {
         //
         $monitor->update($request->all());
@@ -99,7 +77,7 @@ class MonitorsController extends Controller
      * @param  \App\Monitor  $monitor
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Monitor $monitor)
+    public function destroy(User $monitor)
     {
         //
         $monitor->delete();

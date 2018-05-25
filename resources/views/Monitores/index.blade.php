@@ -33,7 +33,7 @@
               <th>Nombre</th>
               <th>Apellido</th>
               <th>Correo</th>
-              <th>Celular</th>
+              <th>Telefono</th>
               <th>Horas</th>
             </tr>
           </thead>
@@ -41,10 +41,10 @@
             @foreach($monitores as $monitor)
               <tr>
                 <td><a href="{{route('monitor.show', $monitor)}}">{{$monitor->id_upb}}</a></td>
-                <td>{{$monitor->nombre}}</td>
+                <td>{{$monitor->name}}</td>
                 <td>{{$monitor->apellido}}</td>
-                <td>{{$monitor->correo}}</td>
-                <td>{{$monitor->numero_celular}}</td>
+                <td>{{$monitor->email}}</td>
+                <td>{{$monitor->telefono}}</td>
                 <td>{{$monitor->numero_horas}}</td>
               </tr>
             @endforeach

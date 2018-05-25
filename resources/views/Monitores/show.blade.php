@@ -31,27 +31,27 @@
         <thead>
           <tr>
             <th>ID</th>
-            <th>Nombre</th>
-            <th>Apellido</th>
+            <th>Nombres</th>
+            <th>Apellidos</th>
             <th>Correo</th>
-            <th>Celular</th>
+            <th>Telefono</th>
             <th>Acciones</th>
           </tr>
         </thead>
         <tbody>
             <tr>
               <td>{{$monitor->id_upb}}</td>
-              <td>{{$monitor->nombre}}</td>
+              <td>{{$monitor->name}}</td>
               <td>{{$monitor->apellido}}</td>
-              <td>{{$monitor->correo}}</td>
-              <td>{{$monitor->numero_celular}}</td>
+              <td>{{$monitor->email}}</td>
+              <td>{{$monitor->telefono}}</td>
               <td>
-                <form class="form-inline" action="{{ route('monitor.destroy', $monitor)}}" method="post">
-                  {{ csrf_field() }}
-                  {{ method_field('DELETE')}}
-                  <a name="button" href="{{route('monitor.edit', $monitor)}}" class="btn btn-primary"> Editar</a>
-                  <button type="submit" class="btn btn-primary">Eliminar</button>
-
+                <a name="button" href="{{route('monitor.edit', $monitor)}}" class="btn btn-primary"> Editar</a>
+                <a class="btn btn-primary" href="{{route('monitor.index')}}" onclick="event.preventDefault();document.getElementById('edit-form').submit();">{{__('Eliminar')}}
+                </a>
+                <form id="edit-form" action="{{ route('monitor.destroy', $monitor) }}" method="POST" style="display: none;">
+                    @csrf
+                    {{method_field('DELETE')}}
                 </form>
               </td>
             </tr>

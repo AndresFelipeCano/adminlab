@@ -37,24 +37,35 @@
           {!!$errors->first('id_upb', '<span class=error>:message</span>')!!}
         </div>
         <div class="form-group col-lg-6 col-md-6 col-sm-12">
-          <label for="correo">Email</label>
-          <input type="email" class="form-control" name="correo" placeholder="Correo" value="{{$monitor->correo}}">
-          {!!$errors->first('correo', '<span class=error>:message</span>')!!}
+          <label for="email">Email</label>
+          <input type="email" class="form-control" name="email" placeholder="Correo" value="{{$monitor->email}}">
+          {!!$errors->first('email', '<span class=error>:message</span>')!!}
         </div>
         <div class="form-group col-lg-6 col-md-6 col-sm-12">
-          <label for="nombre">Nombres</label>
-          <input type="text" name="nombre" placeholder="Nombres" class="form-control" value="{{$monitor->nombre}}">
-          {!!$errors->first('nombre', '<span class=error>:message</span>')!!}
+          <label for="name">Nombres</label>
+          <input type="text" name="name" placeholder="Nombres" class="form-control" value="{{$monitor->name}}">
+          {!!$errors->first('name', '<span class=error>:message</span>')!!}
         </div>
         <div class="form-group col-lg-6 col-md-6 col-sm-12">
-          <label for="apellido">Apellido</label>
+          <label for="apellido">Apellidos</label>
           <input type="text" class="form-control" name="apellido" placeholder="Apellido" value="{{$monitor->apellido}}">
           {!!$errors->first('apellido', '<span class=error>:message</span>')!!}
         </div>
         <div class="form-group col-lg-6 col-md-6 col-sm-12">
-          <label for="numero_celular">Celular</label>
-          <input type="number" class="form-control" name="numero_celular" placeholder="Celular" value="{{$monitor->numero_celular}}">
-          {!!$errors->first('numero_celular', '<span class=error>:message</span>')!!}
+          <label for="telefono">Telefono</label>
+          <input type="number" class="form-control" name="telefono" placeholder="Celular" value="{{$monitor->telefono}}">
+          {!!$errors->first('telefono', '<span class=error>:message</span>')!!}
+        </div>
+        <div class="form-group col-lg-6 col-md-6 col-sm-12">
+          <label for="carrera">Carrera</label>
+          <input type="text" class="form-control" name="carrera" placeholder="Carrera" value="{{$monitor->carrera}}">
+          {!!$errors->first('carrera', '<span class=error>:message</span>')!!}
+        </div>
+
+        <div class="form-group col-lg-6 col-md-6 col-sm-12">
+          <label for="cargo">Cargo</label>
+          <input type="text" class="form-control" name="cargo" placeholder="Cargo" value="{{$monitor->cargo}}">
+          {!!$errors->first('cargo', '<span class=error>:message</span>')!!}
         </div>
       </div>
       <button type="submit" class="btn btn-primary">Enviar</button>
