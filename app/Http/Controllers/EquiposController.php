@@ -62,7 +62,7 @@ class EquiposController extends Controller
     public function show(Equipo $equipo)
     {
         //
-        return view('Equipo.show', ['equipo' => $equipo]);
+        return view('Equipos.show', ['equipo' => $equipo]);
     }
 
     /**
@@ -74,7 +74,7 @@ class EquiposController extends Controller
     public function edit(Equipo $equipo)
     {
         //
-        return view('Equipo.edit', ['equipo' => $equipo]);
+        return view('Equipos.edit', ['equipo' => $equipo]);
     }
 
     /**

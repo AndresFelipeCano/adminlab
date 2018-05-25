@@ -34,7 +34,7 @@
               <th>Apellido</th>
               <th>Correo</th>
               <th>Telefono</th>
-              <th>Horas</th>
+              <th>Cargo</th>
             </tr>
           </thead>
           <tbody>
@@ -45,7 +45,7 @@
                 <td>{{$monitor->apellido}}</td>
                 <td>{{$monitor->email}}</td>
                 <td>{{$monitor->telefono}}</td>
-                <td>{{$monitor->numero_horas}}</td>
+                <td>{{$monitor->cargo}}</td>
               </tr>
             @endforeach
           </tbody>

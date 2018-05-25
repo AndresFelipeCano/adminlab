@@ -1,6 +1,6 @@
 @extends('layout.app')
 
-@section('title', "Show Ewuipo");
+@section('title', "Show Equipo");
 
 {{--Section: content --}}
 @section('content')
@@ -44,10 +44,10 @@
               <td>{{$equipo->obsercaiones}}</td>
               <td>{{$equipo->numero_equipo}}</td>
               <td>
-                <form class="form-inline" action="{{ route('equipo.destroy', $usuario)}}" method="post">
+                <form class="form-inline" action="{{ route('equipo.destroy', $equipo)}}" method="post">
                   {{ csrf_field() }}
                   {{ method_field('DELETE')}}
-                  <a name="button" href="{{route('equipo.edit', $usuario)}}" class="btn btn-primary"> Editar</a>
+                  <a name="button" href="{{route('equipo.edit', $equipo)}}" class="btn btn-primary"> Editar</a>
                   <button type="submit" class="btn btn-primary">Eliminar</button>
 
                 </form>
