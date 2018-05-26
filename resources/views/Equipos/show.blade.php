@@ -30,22 +30,22 @@
       <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
         <thead>
           <tr>
-            <th>ID Categoria</th>
+            <th>Número equipo</th>
+            <th>Categoria</th>
             <th>Estado</th>
             <th>Observaciones</th>
-            <th>Número Equipo</th>
             <th>Acciones</th>
           </tr>
         </thead>
         <tbody>
             <tr>
-              <td>{{$equipo->id_categoria}}</td>
-              <td>{{$equipo->estado}}</td>
-              <td>{{$equipo->obsercaiones}}</td>
               <td>{{$equipo->numero_equipo}}</td>
+              <td>{{$equipo->categoria->nombre}}</td>
+              <td>{{$equipo->estado}}</td>
+              <td>{{$equipo->observaciones}}</td>
               <td>
                 <form class="form-inline" action="{{ route('equipo.destroy', $equipo)}}" method="post">
-                  {{ csrf_field() }}
+                  @csrf
                   {{ method_field('DELETE')}}
                   <a name="button" href="{{route('equipo.edit', $equipo)}}" class="btn btn-primary"> Editar</a>
                   <button type="submit" class="btn btn-primary">Eliminar</button>

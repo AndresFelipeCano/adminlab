@@ -1,5 +1,4 @@
 @extends('layout.app')
-
 @section('title', "Index Equipos");
 
 {{--Section: content --}}
@@ -29,20 +28,28 @@
         <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
           <thead>
             <tr>
-              <th>ID Categoria</th>
+              <th>Número equipo</th>
+              <th>Categoria</th>
               <th>Estado</th>
               <th>Observaciones</th>
-              <th>Número Equipo</th>
+              <th>Creado por</th>
+              <th>Fecha creación</th>
             </tr>
           </thead>
           <tbody>
             @foreach($equipos as $equipo)
               <tr>
+
                 <td><a href="{{route('equipo.show', $equipo)}}">{{$equipo->numero_equipo}}</a></td>
-                <td>{{$equipo->id_categoria}}</td>
-                <td>{{$equipo->estado}}</td>
+                <td><a href="{{route('categoria.show', $equipo->categoria)}}">{{$equipo->categoria->nombre}}</a> </td>
+                <td>
+                  @if($equipo->estado === 'disponible')
+                    Disponible
+                  @else
+                    No Disponible
+                  @endif
+                </td>
                 <td>{{$equipo->observaciones}}</td>
-                <td>{{$equipo->numero_equipo}}</td>
               </tr>
             @endforeach
           </tbody>

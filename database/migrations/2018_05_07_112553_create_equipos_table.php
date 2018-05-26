@@ -15,11 +15,11 @@ class CreateEquiposTable extends Migration
     {
         Schema::create('equipos', function (Blueprint $table) {
             $table->increments('id');
-            $table->integer('id_categoria');
+            $table->integer('categoria_id');
             $table->string('estado');
             $table->text('observaciones');
             $table->integer('numero_equipo')->unique();
-            $table->integer('id_monitor');
+            $table->integer('user_id');
             $table->timestamps();
         });
     }

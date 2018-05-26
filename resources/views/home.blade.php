@@ -1,4 +1,5 @@
 @extends('layout.app')
+
 @section('tittle', 'Bienvenida')
 {{--Section: Styles. Aquí pones los estilos--}}
 @section('styles')
@@ -9,7 +10,7 @@
 
 {{--Section: content. Aquí creas el div principal donde irá todo tu contenido--}}
 @section('content')
-	<div class="container"> <!-- Due to the codepen sandboxing the form will not submit properly in this environment -->
+<div class="container"> <!-- Due to the codepen sandboxing the form will not submit properly in this environment -->
 <div class="background">
  <div class="container">
   <div class="row flex-column justify-content-center align-items-center  text-center">
@@ -26,12 +27,13 @@
  </div><!-- /.container -->
  </div>
 
+
 @endsection
 {{--End section: content--}}
 
 {{--Section: script. Aquí pones los scripts personalizados para tu contenido. Recuerda que ya tienes jquery y bootstrap--}}
 @section('scripts')
-	<script type="text/javascript">// Document ready function
+<script type="text/javascript">// Document ready function
 $(function() {
 
 	// Time function to get the date/time

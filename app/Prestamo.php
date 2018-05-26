@@ -8,6 +8,27 @@ class Prestamo extends Model
 {
     //
     protected $fillable = [
-      'id_monitor', 'id_usuario', 'id_equipo', 'today', 'id_detalles'
+      'user_id', 'usuario_id', 'equipo_id', 'today', 'estado'
     ];
+
+    public function user()
+    {
+      // code...
+      return $this->belongsTo(User::class);
+    }
+    public function usuario()
+    {
+      // code...
+      return $this->belongsTo(Usuario::class);
+    }
+    public function equipo()
+    {
+      // code...
+      return $this->belongsTo(Equipo::class);
+    }
+    public function detalles_prestamo()
+    {
+      // code...
+      return $this->hasOne(DetallesPrestamo::class);
+    }
 }

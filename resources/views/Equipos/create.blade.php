@@ -27,22 +27,22 @@
         @csrf
         <div class="form-row">
           <div class="form-group col-lg-6 col-md-6 col-sm-12">
-            <label for="id_categoria">Categoría</label>
-            <select class="form-control" id="id_categoria" name="id_categoria" type="number">
+            <label for="categoria_id">Categoría</label>
+            <select class="form-control" id="categoria_id" name="categoria_id" type="number">
               <option disabled selected>Seleccionar categoría</option>
               @foreach($categorias as $categoria)
-                <option name="id_categoria" value="{{$categoria->id}}">{{$categoria->nombre}}</option>
+                <option name="categoria_id" value="{{$categoria->id}}">{{$categoria->nombre}}-{{$categoria->detalles}}</option>
               @endforeach
             </select>
-            {!!$errors->first('id_categoria', '<span class=error>:message</span>')!!}
+            {!!$errors->first('categoria_id', '<span class=error>:message</span>')!!}
           </div>
 
           <div class="form-group col-lg-6 col-md-6 col-sm-12">
             <label for="estado">Estado</label>
             <select class="form-control" id="estado" name="estado" type="text">
               <option disabled>Seleccionar estado</option>
-              <option name="estado" value="Disponible" selected>Disponible</option>
-              <option name="estado" value="No Disponible">No Disponible</option>
+              <option name="estado" value="disponible" selected>Disponible</option>
+              <option name="estado" value="no_disponible">No Disponible</option>
             </select>
             {!!$errors->first('estado', '<span class=error>:message</span>')!!}
           </div>
@@ -53,10 +53,10 @@
           </div>
           <div class="form-group col-lg-6 col-md-6 col-sm-12">
             <label for="numero_equipo">Número Equipo</label>
-            <input type="number" class="form-control" name="numero_equipo" placeholder="Número Equipo" value="{{old('numero_equipo')}}">
+            <input type="number" class="form-control" name="numero_equipo" placeholder="Número Equipo" value="{{$numero_equipo}}">
             {!!$errors->first('numero_equipo', '<span class=error>:message</span>')!!}
           </div>
-          <input type="number" name="id_monitor" value="{{Auth::user()->id_upb}}" style="display:none;">
+          <input type="number" name="user_id" value="{{Auth::user()->id_upb}}" style="display:none;">
         </div>
         <button type="submit" class="btn btn-primary">Enviar</button>
       </form>

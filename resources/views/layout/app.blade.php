@@ -26,7 +26,7 @@
     <meta name="msapplication-TileImage" content="/ms-icon-144x144.png">
     <meta name="theme-color" content="#ffffff">
 
-    <title>@yield('title') Admin's Lab</title>
+    <title>@yield('tittle') | {{ config('app.name', 'Adminlab') }}</title>
 
     <!-- Bootstrap core CSS -->
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">

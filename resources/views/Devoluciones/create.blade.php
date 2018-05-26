@@ -10,10 +10,8 @@
     <meta name="csrf-token" content="{{ csrf_token() }}">
   @endsection
   {{--End section; meta--}}
-
   {{--Section: styles--}}
   @section('styles')
-
   @endsection
   {{--Section: styles--}}
   <div class="content-wrapper">
@@ -28,9 +26,14 @@
         {{ csrf_field() }}
         <div class="form-row">
           <div class="form-group col-lg-6 col-md-6 col-sm-12">
-            <label for="id_prestamo">ID Préstamo</label>
-            <input type="number" name="id_prestamo" placeholder="ID Prestamo" class="form-control" value="{{old('id_prestamo')}}">
-            {!!$errors->first('id_prestamo', '<span class=error>:message</span>')!!}
+            <label for="prestamo_id">ID Prestamo</label>
+            <select class="form-control" id="prestamo_id" name="prestamo_id" type="number">
+              <option disabled selected>Seleccionar Prestamo</option>
+              @foreach($prestamos as $prestamo)
+                <option name="prestamo_id" value="{{$prestamo->id}}">{{$prestamo->usuario->nombre}}</option>
+              @endforeach
+            </select>
+            {!!$errors->first('prestamo_id', '<span class=error>:message</span>')!!}
           </div>
           <div class="form-group col-lg-6 col-md-6 col-sm-12">
             <label for="carga_bateria">Carga de la Batería</label>

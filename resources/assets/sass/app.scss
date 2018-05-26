@@ -24,7 +24,7 @@
 @import 'global.scss';
 
 // utilities
-@iport 'utilities.scss';
+@import 'utilities.scss';
 
 // navbar/navbar_global
 @import 'navbar/navbar_global.scss';
@@ -138,4 +138,7 @@ b, strong {
 	#greeting {
 		font-size: 3.6rem;
 	}
+}
+.custom-color{
+  background-color: #ff12ff;
 }

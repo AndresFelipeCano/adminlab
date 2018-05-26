@@ -20,7 +20,8 @@ class CategoriasController extends Controller
     public function index()
     {
         //
-        return view('Categoria.index', ['categorias' => Categoria::all()]);
+        $categorias = Categoria::all();
+        return view('Categoria.index')->with(compact('categorias'));
     }
 
     /**
@@ -45,8 +46,7 @@ class CategoriasController extends Controller
         //
         $this->validate($request, [
           'nombre' => 'required',
-          'detalles' => 'required'
-
+          'detalles' => 'required',
         ]);
         Categoria::create($request->all());
 
@@ -59,10 +59,10 @@ class CategoriasController extends Controller
      * @param  \App\Categoria  $categoria
      * @return \Illuminate\Http\Response
      */
-    public function show(Categoria $categoria)
+    public function show(Categoria $categorium)
     {
         //
-        return view('Categoria.show', ['categoria' => $categoria]);
+        return view('Categoria.show')->with(compact('categorium'));
     }
 
     /**
@@ -71,10 +71,10 @@ class CategoriasController extends Controller
      * @param  \App\Categoria  $categoria
      * @return \Illuminate\Http\Response
      */
-    public function edit(Categoria $categoria)
+    public function edit(Categoria $categorium)
     {
         //
-        return view('Categoria.edit', ['categoria' => $categoria]);
+        return view('Categoria.edit')->with(compact('categorium'));
     }
 
     /**
@@ -84,10 +84,10 @@ class CategoriasController extends Controller
      * @param  \App\Categoria  $categoria
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Categoria $categoria)
+    public function update(Request $request, Categoria $categorium)
     {
         //
-        $categoria->update($request->all());
+        $categorium->update($request->all());
         return redirect()->route('categoria.index');
     }
 
@@ -97,10 +97,10 @@ class CategoriasController extends Controller
      * @param  \App\Categoria  $categoria
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Categoria $categoria)
+    public function destroy(Categoria $categorium)
     {
         //
-        $categoria->delete();
+        $categorium->delete();
         return redirect()->route('categoria.index');
     }
 }
