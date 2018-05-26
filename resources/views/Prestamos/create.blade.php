@@ -71,8 +71,9 @@
           </div>
           <div class="form-group col-lg-6 col-md-6 col-sm-12">
             <label for="detalles">Detalles</label>
-            <input type="Text" name="detalles" placeholder="Detalles" class="form-control" value="{{old('detalles')}}">
+            <textarea type="Text" name="detalles" placeholder="Detalles" class="form-control" value="{{old('detalles')}}">
             {!!$errors->first('detalles', '<span class=error>:message</span>')!!}
+            </textarea>
           </div>
           <div class="form-group col-lg-6 col-md-6 col-sm-12">
             <label for="today">Fecha de hoy</label>

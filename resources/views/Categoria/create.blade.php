@@ -32,10 +32,14 @@
             <input type="text" name="nombre" placeholder="Nombre" class="form-control" value="{{old('nombre')}}">
             {!!$errors->first('nombre', '<span class=error>:message</span>')!!}
           </div>
+        </div>
+        <div class="form-row">
           <div class="form-group col-lg-6 col-md-6 col-sm-12">
+
             <label for="detalles">Detalles</label>
-            <input type="text" class="form-control" name="detalles" placeholder="Detalles" value="{{old('detalles')}}">
+            <textarea type="text" class="form-control" name="detalles" placeholder="Detalles" value="{{old('detalles')}}">
             {!!$errors->first('detalles', '<span class=error>:message</span>')!!}
+            </textarea>
           </div>
         </div>
         <button type="submit" class="btn btn-primary">Enviar</button>
