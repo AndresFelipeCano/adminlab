@@ -31,13 +31,22 @@
         {{ method_field('PUT')}}
         <div class="form-row">
           <div class="form-group col-lg-6 col-md-6 col-sm-12">
-            <label for="id_categoria">ID UPB</label>
-            <input type="number" name="id_categoria" placeholder="ID Categoria" class="form-control" value="{{$equipo->id_categoria}}">
-            {!!$errors->first('id_categoria', '<span class=error>:message</span>')!!}
+            <label for="categoria_id">Categoría</label>
+            <select class="form-control" id="categoria_id" name="categoria_id" type="number">
+              <option disabled selected>Seleccionar categoría</option>
+              @foreach($categorias as $categoria)
+                <option name="categoria_id" value="{{$categoria->id}}" @if($categoria->id === $equipo->categoria_id) selected @endif>{{$categoria->nombre}}</option>
+              @endforeach
+            </select>
+            {!!$errors->first('categoria_id', '<span class=error>:message</span>')!!}
           </div>
           <div class="form-group col-lg-6 col-md-6 col-sm-12">
             <label for="estado">Estado</label>
-            <input type="text" class="form-control" name="estado" placeholder="Estado" value="{{$equipo->estado}}">
+            <select class="form-control" id="estado" name="estado" type="text">
+              <option disabled>Seleccionar estado</option>
+              <option name="estado" value="disponible" @if($equipo->estado === 'disponible') selected @endif>Disponible</option>
+              <option name="estado" value="no_disponible" @if($equipo->estado === 'no_dispoible') selected @endif>No Disponible</option>
+            </select>
             {!!$errors->first('estado', '<span class=error>:message</span>')!!}
           </div>
           <div class="form-group col-lg-6 col-md-6 col-sm-12">

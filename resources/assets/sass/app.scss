@@ -24,7 +24,7 @@
 @import 'global.scss';
 
 // utilities
-@iport 'utilities.scss';
+@import 'utilities.scss';
 
 // navbar/navbar_global
 @import 'navbar/navbar_global.scss';
@@ -52,4 +52,8 @@
 
 .error{
   color: #df0000;
+}
+
+.custom-color{
+  background-color: #ff12ff;
 }

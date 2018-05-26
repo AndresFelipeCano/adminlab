@@ -15,7 +15,7 @@ class CreateDevolucionsTable extends Migration
     {
         Schema::create('devolucions', function (Blueprint $table) {
             $table->increments('id');
-            $table->integer('id_prestamo');
+            $table->integer('prestamo_id');
             $table->string('carga_bateria', 2);
             $table->text('observaciones', 2);
             $table->timestamps();

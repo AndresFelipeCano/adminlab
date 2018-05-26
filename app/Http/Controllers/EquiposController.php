@@ -21,7 +21,8 @@ class EquiposController extends Controller
     public function index()
     {
         //
-        return view('Equipos.index', ['equipos' => Equipo::all()]);
+        $equipos = Equipo::all();
+        return view('Equipos.index')->with(compact('equipos'));
     }
 
     /**
@@ -33,7 +34,8 @@ class EquiposController extends Controller
     {
         //
         $categorias =  Categoria::all();
-        return view('Equipos.create')->with(compact('categorias'));
+        $numero_equipo = Equipo::all()->count() + 1;
+        return view('Equipos.create')->with(compact('categorias'))->with(compact('numero_equipo'));
     }
 
     /**
@@ -45,13 +47,13 @@ class EquiposController extends Controller
     public function store(Request $request)
     {
         //
-        dd($request->all());
+
         $this->validate($request, [
-          'id_categoria' => 'required',
+          'categoria_id' => 'required',
           'estado' => 'required|string',
           'observaciones' => 'required',
           'numero_equipo' => 'required|unique:equipos',
-          'id_monitor' => 'required'
+          'user_id' => 'required'
         ]);
         Equipo::create($request->all());
         return redirect()->route('equipo.index');
@@ -78,7 +80,8 @@ class EquiposController extends Controller
     public function edit(Equipo $equipo)
     {
         //
-        return view('Equipos.edit', ['equipo' => $equipo]);
+        $categorias =  Categoria::all();
+        return view('Equipos.edit')->with(compact('equipo'))->with(compact('categorias'));
     }
 
     /**

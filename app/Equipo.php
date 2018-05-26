@@ -8,8 +8,20 @@ class Equipo extends Model
 {
     //
     protected $fillable=[
-      'id_categoria', 'estado', 'observaciones', 'numero_equipo'
+      'categoria_id', 'estado', 'observaciones', 'numero_equipo', 'user_id'
     ];
 
-    protected $hidden = ['id_upb'];
+    protected $hidden = ['id_monitor'];
+
+    public function categoria()
+    {
+      // code...
+      return $this->belongsTo(Categoria::class);
+    }
+
+    public function user()
+    {
+      // code...
+      return $this->belongsTo(User::class);
+    }
 }

@@ -3,6 +3,10 @@
 namespace App\Http\Controllers;
 
 use App\Prestamo;
+use App\User; //Usuario registrador en la app
+use App\Usuario; //Usuarios que prestan equipos
+use App\Equipo;
+use App\DetallesPrestamo;
 use Carbon\Carbon;
 use Illuminate\Http\Request;
 
@@ -45,7 +49,15 @@ class PrestamosController extends Controller
     {
         //
         $today = Carbon::now()->toDateString();
-        return view('Prestamos.create')->with(compact('today'));
+        $monitores = User::where('cargo', '=', 'monitor')->get();
+        $administradores = User::where('cargo', '=', 'administrador')->get();
+        $equipos = Equipo::where('estado', '=', 'disponible')->get();
+        $usuarios = Usuario::all();
+        return view('Prestamos.create')->with(compact('today'))
+        ->with(compact('monitores'))
+        ->with(compact('administradores'))
+        ->with(compact('equipos'))
+        ->with(compact('usuarios'));
     }
 
     /**
@@ -58,11 +70,12 @@ class PrestamosController extends Controller
     {
         //
         $this->validate($request, [
-          'id_monitor' => 'required',
-          'id_usuario' => 'required',
-          'id_equipo' => 'required',
-          'id_detalles' => 'required',
-          'today' => 'required'
+          'user_id' => 'required',
+          'usuario_id' => 'required',
+          'equipo_id' => 'required',
+          'detalles_prestamo_id' => 'required',
+          'today' => 'required|string',
+          'estado' => 'required|string'
         ]);
         Prestamo::Create($request->all());
         return redirect()->route('prestamo.index');

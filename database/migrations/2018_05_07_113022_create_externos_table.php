@@ -13,15 +13,7 @@ class CreateExternosTable extends Migration
      */
     public function up()
     {
-        Schema::create('externos', function (Blueprint $table) {
-            $table->increments('id');
-            $table->string('nombre');
-            $table->string('apellido');
-            $table->string('correo')->unique();
-            $table->string('cargo', 10);
-            $table->text('observaciones');
-            $table->timestamps();
-        });
+        
     }
 
     /**

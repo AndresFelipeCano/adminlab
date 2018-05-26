@@ -82,13 +82,21 @@
                             <label for="cargo" class="col-md-4 col-form-label text-md-right">{{ __('Cargo') }}</label>
 
                             <div class="col-md-6">
-                                <input id="cargo" type="text" class="form-control{{ $errors->has('cargo') ? ' is-invalid' : '' }}" name="cargo" value="{{ old('cargo') }}" required>
+                              <select class="form-control" id="cargo" name="cargo" type="text" required>
+                                <option disabled>Seleccionar cargo</option>
+                                <option name="cargo" value="monitor" selected>Monitor</option>
+                                <option name="cargo" value="administrador">Administrador</option>
+                              </select>
 
                                 @if ($errors->has('cargo'))
                                     <span class="invalid-feedback">
                                         <strong>{{ $errors->first('cargo') }}</strong>
                                     </span>
                                 @endif
+                            </div>
+                            <div class="form-group col-lg-6 col-md-6 col-sm-12">
+
+
                             </div>
                         </div>
                         <div class="form-group row">

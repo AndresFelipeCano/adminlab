@@ -15,7 +15,7 @@ class CreateDetallesPrestamosTable extends Migration
     {
         Schema::create('detalles_prestamos', function (Blueprint $table) {
             $table->increments('id');
-            $table->integer('id_prestamo');
+            $table->integer('prestamo_id');
             $table->integer('id_externo');
             $table->text('detalles');
             $table->timestamps();
