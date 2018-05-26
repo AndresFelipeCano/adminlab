@@ -39,7 +39,7 @@
           <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Tables">
             <a class="nav-link" href="{{route('prestamo.create')}}">
               <i class="fa fa-fw fa-repeat"></i>
-              <span class="nav-link-text">Realizar préstamo</span>
+              <span class="nav-link-text">Realizar Préstamo</span>
             </a>
           </li>
           <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Tables">
@@ -51,7 +51,7 @@
           <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Tables">
             <a class="nav-link" href="{{route('equipo.create')}}">
               <i class="fa fa-fw fa-dropbox"></i>
-              <span class="nav-link-text">Registrar equipo</span>
+              <span class="nav-link-text">Registrar Equipo</span>
             </a>
           </li>
           <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Tables">
@@ -105,12 +105,12 @@
       <div class="modal-dialog" role="document">
         <div class="modal-content">
           <div class="modal-header">
-            <h5 class="modal-title" id="exampleModalLabel">Ready to Leave?</h5>
+            <h5 class="modal-title" id="exampleModalLabel">¿Está seguro de que quiere cerrar la sesión?</h5>
             <button class="close" type="button" data-dismiss="modal" aria-label="Close">
               <span aria-hidden="true">×</span>
             </button>
           </div>
-          <div class="modal-body">¿Seguro de que quieres cerrar la sesión?</div>
+          
           <div class="modal-footer">
             <button class="btn btn-secondary" type="button" data-dismiss="modal">Cancelar</button>
 

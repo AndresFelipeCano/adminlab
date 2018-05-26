@@ -29,8 +29,8 @@
         <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
           <thead>
             <tr>
-              <th>ID Prestamo</th>
-              <th>Carga Batería</th>
+              <th>ID Préstamo</th>
+              <th>Carga de la Batería</th>
               <th>Observaciones</th>
             </tr>
           </thead>

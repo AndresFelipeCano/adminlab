@@ -41,7 +41,7 @@
         <li class="breadcrumb-item">
           <a href="{{route('prestamo.index')}}">Ver</a>
         </li>
-        <li class="breadcrumb-item active">Prestamos</li>
+        <li class="breadcrumb-item active">Préstamos</li>
       </ol>
       <ol class="breadcrumb">
         <li class="breadcrumb-item">
