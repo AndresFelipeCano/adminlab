@@ -55,12 +55,6 @@
         </li>
         <li class="breadcrumb-item active">Categoría</li>
       </ol>
-      <ol class="breadcrumb">
-        <li class="breadcrumb-item">
-          <a href="{{route('detalleprestamo.index')}}">Ver</a>
-        </li>
-        <li class="breadcrumb-item active">Detalles</li>
-      </ol>
     </div>
   </div>
 

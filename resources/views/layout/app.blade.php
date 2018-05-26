@@ -34,7 +34,7 @@
   <body class="fixed-nav sticky-footer bg-dark" id="page-top">
     <!-- Navigation-->
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top" id="mainNav">
-     
+
       <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
@@ -43,7 +43,7 @@
           <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Logo">
             <a class="nav-link text-center" href="{{route('home')}}"  ><img src="{{asset("logo-AL.png")}}" alt="AdminLab" width="125.5" height="125.5" ></a>
           </li>
-           
+
           <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Dashboard">
             <a class="nav-link" href="{{route('prestamo.index')}}">
               <i class="fa fa-fw fa-dashboard"></i>
@@ -86,12 +86,6 @@
               <span class="nav-link-text">Registrar Categoría</span>
             </a>
           </li>
-          <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Tables">
-            <a class="nav-link" href="{{route('detalleprestamo.create')}}">
-              <i class="fa fa-fw fa-list"></i>
-              <span class="nav-link-text">Registrar Detalles</span>
-            </a>
-          </li>
         </ul>
         <ul class="navbar-nav sidenav-toggler">
           <li class="nav-item">
@@ -130,7 +124,7 @@
               <span aria-hidden="true">×</span>
             </button>
           </div>
-          
+
           <div class="modal-footer">
             <button class="btn btn-secondary" type="button" data-dismiss="modal">Cancelar</button>
 
