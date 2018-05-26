@@ -61,12 +61,6 @@
         </li>
         <li class="breadcrumb-item active">Detalles</li>
       </ol>
-      <ol class="breadcrumb">
-        <li class="breadcrumb-item">
-          <a href="{{route('externo.index')}}">Ver</a>
-        </li>
-        <li class="breadcrumb-item active">Externo</li>
-      </ol>
     </div>
   </div>
 
