@@ -10,7 +10,7 @@
     @yield('styles')
     <link rel="icon" href="../../../../favicon.ico">
 
-    <title>@yield('tittle') | Admin Lab</title>
+    <title>@yield('tittle') | {{ config('app.name', 'Adminlab') }}</title>
     <!-- Bootstrap core CSS -->
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
   </head>

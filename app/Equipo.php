@@ -24,4 +24,9 @@ class Equipo extends Model
       // code...
       return $this->belongsTo(User::class);
     }
+    public function prestamos()
+    {
+      // code...
+      return $this->hasOne(Prestamo::class);
+    }
 }

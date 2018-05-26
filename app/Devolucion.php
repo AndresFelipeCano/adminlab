@@ -8,6 +8,12 @@ class Devolucion extends Model
 {
     //
     protected $fillable = [
-      'id_prestamo', 'carga_bateria', 'observaciones'
+      'prestamo_id', 'carga_bateria', 'observaciones'
     ];
+
+    public function prestamo()
+    {
+      // code...
+      return $this->belongsTo(Prestamo::class);
+    }
 }

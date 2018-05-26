@@ -26,8 +26,8 @@
         <li class="breadcrumb-item active"><a href="{{route('prestamo.index')}}">Prestamo</a></li>
       </ol>
 
-      <form class="" action="{{route('prestamo.store')}}" method="post">
-        {{ csrf_field() }}
+      <form class="" action="{{route('prestamo.store')}}" method="POST">
+        @csrf
         <div class="form-row">
           <div class="form-group col-lg-6 col-md-6 col-sm-12">
             <label for="user_id">Monitor/Administrador</label>
@@ -63,20 +63,20 @@
             <select class="form-control" id="equipo_id" name="equipo_id" type="number">
               <option disabled selected>Seleccionar Equipo</option>
               @foreach($equipos as $equipo)
-                <option name="equipo_id" value="{{$equipo->numero_equipo}}">{{$equipo->nombre}} - {{$equipo->numero_equipo}}</option>
+                <option name="equipo_id" value="{{$equipo->numero_equipo}}">{{$equipo->categoria->nombre}} - {{$equipo->numero_equipo}}</option>
               @endforeach
             </select>
 
             {!!$errors->first('equipo_id', '<span class=error>:message</span>')!!}
           </div>
           <div class="form-group col-lg-6 col-md-6 col-sm-12">
-            <label for="detalles_prestamo_id">ID Detalles</label>
-            <input type="number" name="detalles_prestamo_id" placeholder="ID Detalles" class="form-control" value="{{old('detalles_prestamo_id')}}">
-            {!!$errors->first('detalles_prestamo_id', '<span class=error>:message</span>')!!}
+            <label for="detalles">Detalles</label>
+            <input type="Text" name="detalles" placeholder="Detalles" class="form-control" value="{{old('detalles')}}">
+            {!!$errors->first('detalles', '<span class=error>:message</span>')!!}
           </div>
           <div class="form-group col-lg-6 col-md-6 col-sm-12">
             <label for="today">Fecha de hoy</label>
-            <input type="text" name="today" placeholder="" class="form-control" value="{{$today}}" disabled>
+            <input type="text" name="today" placeholder="" class="form-control" value="{{$today}}">
             {!!$errors->first('today', '<span class=error>:message</span>')!!}
           </div>
           <input type="text" name="estado" placeholder="" class="form-control" value="{{__('activo')}}" style="display:none;">

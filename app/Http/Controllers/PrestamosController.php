@@ -5,8 +5,8 @@ namespace App\Http\Controllers;
 use App\Prestamo;
 use App\User; //Usuario registrador en la app
 use App\Usuario; //Usuarios que prestan equipos
-use App\Equipo;
-use App\DetallesPrestamo;
+use App\Equipo;//Equipos que pueden ser prestados
+use App\DetallesPrestamo;//detalles adicionales del prestamo, en otra tabla por normalización
 use Carbon\Carbon;
 use Illuminate\Http\Request;
 
@@ -73,11 +73,25 @@ class PrestamosController extends Controller
           'user_id' => 'required',
           'usuario_id' => 'required',
           'equipo_id' => 'required',
-          'detalles_prestamo_id' => 'required',
           'today' => 'required|string',
-          'estado' => 'required|string'
+          'estado' => 'required|string',
+          'detalles' => 'required|string'
         ]);
-        Prestamo::Create($request->all());
+        $prestamo = new Prestamo;
+        $user = User::where('id_upb', '=', $request->user_id)->firstOrFail();
+        $usuario = Usuario::where('id_upb', '=', $request->usuario_id)->firstOrFail();
+        $equipo = Equipo::where('id', '=', $request->equipo_id)->firstOrFail();
+        $prestamo->user_id = $request->user_id;
+        $prestamo->usuario_id = $request->usuario_id;
+        $prestamo->equipo_id = $request->equipo_id;
+        $prestamo->today = $request->today;
+        $prestamo->estado = $request->estado;
+        $prestamo->save();
+        $prestamo->detalles_prestamo()->create(['prestamo_id' => $prestamo->id, 'detalles' => $request->detalles]);
+        $prestamo->user()->associate($user);
+        $prestamo->usuario()->associate($usuario);
+        $prestamo->equipo()->associate($equipo);
+        $prestamo->push();
         return redirect()->route('prestamo.index');
     }
 

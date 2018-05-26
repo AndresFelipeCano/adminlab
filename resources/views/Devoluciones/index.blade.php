@@ -37,7 +37,7 @@
           <tbody>
             @foreach($devoluciones as $devolucion)
               <tr>
-                <td><a href="{{route('devoluciones.show', $devolucion)}}">{{$devolucion->id_prestamo}}</a></td>
+                <td><a href="{{route('devolucion.show', $devolucion)}}">{{$devolucion->id_prestamo}}</a></td>
                 <td>{{$devolucion->carga_bateria}}</td>
                 <td>{{$devolucion->Observaciones}}</td>
               </tr>

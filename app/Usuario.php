@@ -10,4 +10,9 @@ class Usuario extends Model
     protected $fillable = [
       'id_upb', 'nombre', 'apellido', 'correo', 'cargo', 'telefono', 'carrera'
     ];
+    public function prestamos()
+    {
+      // code...
+      return $this->hasOne(Prestamo::class);
+    }
 }

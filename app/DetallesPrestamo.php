@@ -8,6 +8,11 @@ class DetallesPrestamo extends Model
 {
     //
     protected $fillable = [
-      'id_prestamo', 'id_externo', 'detalles'
+     'id_externo', 'detalles', 'prestamo_id'
     ];
+    public function prestamo()
+    {
+      // code...
+      return $this->hasOne(User::class);
+    }
 }

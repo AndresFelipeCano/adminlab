@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Devolucion;
+use App\Prestamo;
 use Illuminate\Http\Request;
 
 class DevolucionsController extends Controller
@@ -31,7 +32,8 @@ class DevolucionsController extends Controller
     public function create()
     {
         //
-        return view('Devoluciones.create');
+        $prestamos = Prestamo::where('estado', '=', 'activo')->get();
+        return view('Devoluciones.create')->with(compact('prestamos'));
     }
 
     /**
@@ -44,11 +46,19 @@ class DevolucionsController extends Controller
     {
         //
         $this->validate($request, [
-          'id_prestamo' => 'required',
           'carga_bateria' => 'required',
-          'observaciones' => 'required'
+          'observaciones' => 'required|string',
+          'prestamo_id' => 'required',
         ]);
-        Devolucion::create($request->all());
+        $devolucion = new Devolucion;
+        $prestamo = Prestamo::where('id', '=', $request->prestamo_id)->firstOrFail();
+        $devolucion->prestamo_id = $request->prestamo_id;
+        $devolucion->carga_bateria = $request->carga_bateria;
+        $devolucion->observaciones = $request->observaciones;
+        $devolucion->prestamo()->associate($prestamo);
+        $devolucion->push();
+        $prestamo->estado = "inactivo";
+        $prestamo->push();
 
         return redirect()->route('devolucion.index');
     }
