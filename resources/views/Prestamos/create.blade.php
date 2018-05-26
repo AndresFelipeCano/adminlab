@@ -49,12 +49,6 @@
               @foreach($usuarios as $usuario)
                 <option name="usuario_id" value="{{$usuario->id_upb}}">{{$usuario->nombre}} - {{$usuario->id_upb}}</option>
               @endforeach
-              @foreach($monitores as $monitor)
-                <option name="usuario_id" value="{{$monitor->id_upb}}">{{$monitor->name}} - {{$monitor->id_upb}}</option>
-              @endforeach
-              @foreach($administradores as $monitor)
-                <option name="usuario_id" value="{{$monitor->id_upb}}">{{$monitor->name}} - {{$monitor->id_upb}}</option>
-              @endforeach
             </select>
             {!!$errors->first('usuario_id', '<span class=error>:message</span>')!!}
           </div>
