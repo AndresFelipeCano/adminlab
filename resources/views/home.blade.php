@@ -12,13 +12,13 @@
 	<div class="container"> <!-- Due to the codepen sandboxing the form will not submit properly in this environment -->
 <div class="background">
  <div class="container">
-  <div class="row flex-column justify-content-center align-items-center text-center">
+  <div class="row flex-column justify-content-center align-items-center  text-center">
    <div class="col-sm-12 col-md-10 col-lg-8">
     <h1 id="time" class="home-text">12:00 AM</h1>
     <h3 id="day" class="display-5 home-text">Monday, January 01</h3>
   	<label id="userName" style="display:none;">{{Auth::user()->name}}</label>
     <h2 id="greeting" class="home-text">Buenos días, {{Auth::user()->name}} !</h2>
-    <h3 class="home-text">Bienvenido </h3>
+    
    </div><!-- /.col -->
    
   </div><!-- /.row -->

@@ -1207,6 +1207,8 @@ footer.sticky-footer {
 }
 
 .background {
+  padding-left: 150px;
+  padding-bottom: 160px;
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
