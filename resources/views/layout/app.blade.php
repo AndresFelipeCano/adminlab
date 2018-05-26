@@ -41,7 +41,7 @@
       <div class="collapse navbar-collapse" id="navbarResponsive">
         <ul class="navbar-nav navbar-sidenav" id="exampleAccordion">
           <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Dashboard">
-            <a class="nav-link text-center" href="/home"  ><img src="{{asset("logo-AL.png")}}" alt="AdminLab" width="125.5" height="125.5" ></a>
+            <a class="nav-link text-center" href="{{route('home')}}"  ><img src="{{asset("logo-AL.png")}}" alt="AdminLab" width="125.5" height="125.5" ></a>
           </li>
            
           <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Dashboard">
@@ -101,7 +101,7 @@
           </li>
         </ul>
         <ul class="navbar-nav ml-auto">
-          <li class="nav-item">
+          <li class="nav-item hide-button">
             <a class="nav-link" data-toggle="modal" data-target="#exampleModal">
               <i class="fa fa-fw fa-sign-out"></i>Salir</a>
           </li>
