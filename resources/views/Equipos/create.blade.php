@@ -24,16 +24,26 @@
         <li class="breadcrumb-item active"><a href="{{route('equipo.index')}}">Equipo</a></li>
       </ol>
       <form class="" action="{{route('equipo.store')}}" method="post">
-        {{ csrf_field() }}
+        @csrf
         <div class="form-row">
           <div class="form-group col-lg-6 col-md-6 col-sm-12">
-            <label for="id_categoria">ID Categoria</label>
-            <input type="number" name="id_categoria" placeholder="ID Categoria" class="form-control" value="{{old('id_categoria')}}">
+            <label for="id_categoria">Categoría</label>
+            <select class="form-control" id="id_categoria" name="id_categoria" type="number">
+              <option disabled selected>Seleccionar categoría</option>
+              @foreach($categorias as $categoria)
+                <option name="id_categoria" value="{{$categoria->id}}">{{$categoria->nombre}}</option>
+              @endforeach
+            </select>
             {!!$errors->first('id_categoria', '<span class=error>:message</span>')!!}
           </div>
+
           <div class="form-group col-lg-6 col-md-6 col-sm-12">
             <label for="estado">Estado</label>
-            <input type="text" name="estado" placeholder="Estado" class="form-control" value="{{old('estado')}}">
+            <select class="form-control" id="estado" name="estado" type="text">
+              <option disabled>Seleccionar estado</option>
+              <option name="estado" value="Disponible" selected>Disponible</option>
+              <option name="estado" value="No Disponible">No Disponible</option>
+            </select>
             {!!$errors->first('estado', '<span class=error>:message</span>')!!}
           </div>
           <div class="form-group col-lg-6 col-md-6 col-sm-12">
@@ -46,6 +56,7 @@
             <input type="number" class="form-control" name="numero_equipo" placeholder="Número Equipo" value="{{old('numero_equipo')}}">
             {!!$errors->first('numero_equipo', '<span class=error>:message</span>')!!}
           </div>
+          <input type="number" name="id_monitor" value="{{Auth::user()->id_upb}}" style="display:none;">
         </div>
         <button type="submit" class="btn btn-primary">Enviar</button>
       </form>

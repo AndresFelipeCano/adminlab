@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Equipo;
+use App\Categoria;
 use Illuminate\Http\Request;
 
 class EquiposController extends Controller
@@ -31,7 +32,8 @@ class EquiposController extends Controller
     public function create()
     {
         //
-        return view('Equipos.create');
+        $categorias =  Categoria::all();
+        return view('Equipos.create')->with(compact('categorias'));
     }
 
     /**
@@ -43,11 +45,13 @@ class EquiposController extends Controller
     public function store(Request $request)
     {
         //
+        dd($request->all());
         $this->validate($request, [
           'id_categoria' => 'required',
-          'estado' => 'required',
+          'estado' => 'required|string',
           'observaciones' => 'required',
-          'numero_equipo' => 'required'
+          'numero_equipo' => 'required|unique:equipos',
+          'id_monitor' => 'required'
         ]);
         Equipo::create($request->all());
         return redirect()->route('equipo.index');

@@ -10,4 +10,6 @@ class Equipo extends Model
     protected $fillable=[
       'id_categoria', 'estado', 'observaciones', 'numero_equipo'
     ];
+
+    protected $hidden = ['id_upb'];
 }

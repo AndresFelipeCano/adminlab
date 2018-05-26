@@ -18,7 +18,8 @@ class CreateEquiposTable extends Migration
             $table->integer('id_categoria');
             $table->string('estado');
             $table->text('observaciones');
-            $table->integer('numero_equipo');
+            $table->integer('numero_equipo')->unique();
+            $table->integer('id_monitor');
             $table->timestamps();
         });
     }

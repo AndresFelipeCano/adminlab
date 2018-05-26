@@ -45,7 +45,7 @@ class PrestamosController extends Controller
     {
         //
         $today = Carbon::now()->toDateString();
-        return view('Prestamos.create', compact('today'));
+        return view('Prestamos.create')->with(compact('today'));
     }
 
     /**
