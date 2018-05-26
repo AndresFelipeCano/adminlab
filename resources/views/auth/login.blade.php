@@ -17,8 +17,9 @@
   top: 0;
   left: 0;
   width: 100%;
-  height: 700px;
+  height: 639px;
   overflow: hidden;
+
 }
 .wrapper.form-success .container h1 {
           transform: translateY(85px);

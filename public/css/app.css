@@ -1197,6 +1197,11 @@ footer.sticky-footer {
   }
 }
 
+b,
+strong {
+  font-weight: bolder !important;
+}
+
 .error {
   color: #df0000;
 }

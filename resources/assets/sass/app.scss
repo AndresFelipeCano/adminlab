@@ -50,7 +50,9 @@
 // footer
 @import 'footer.scss';
 
-
+b, strong {
+    font-weight: bolder !important;
+}
 .error{
   color: #df0000;
 }
