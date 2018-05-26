@@ -22,7 +22,7 @@
       <li class="breadcrumb-item">
         <a href="#">Dashboard</a>
       </li>
-      <li class="breadcrumb-item active">Prestamos</li>
+      <li class="breadcrumb-item active">Préstamos</li>
     </ol>
     <!-- Area Chart Example-->
     <div class="card mb-3">
@@ -37,18 +37,18 @@
     <!-- Tabla donde visualizaremos los prestamos-->
     <div class="card mb-3">
       <div class="card-header">
-        <i class="fa fa-table"></i> Tabla prestamos</div>
+        <i class="fa fa-table"></i> Tabla de préstamos</div>
       <div class="card-body">
         <div class="table-responsive">
           <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
             <thead>
               <tr>
-                <th>Id usuario</th>
-                <th>Id del monitor</th>
-                <th>Id equipo</th>
+                <th>ID del usuario</th>
+                <th>ID del monitor</th>
+                <th>ID del equipo</th>
                 <th>Hora del préstamo</th>
-                <th>Hora de entrega</th>
-                <th>Id detalles</th>
+                <th>Hora de la entrega</th>
+                <th>ID detalles</th>
               </tr>
             </thead>
             <tbody>

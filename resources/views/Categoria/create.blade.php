@@ -22,7 +22,7 @@
       <ol class="breadcrumb">
         <li class="breadcrumb-item">Crear
         </li>
-        <li class="breadcrumb-item active"><a href="{{route('categoria.index')}}">Categoria</a></li>
+        <li class="breadcrumb-item active"><a href="{{route('categoria.index')}}">Categoría</a></li>
       </ol>
       <form class="" action="{{route('categoria.store')}}" method="post">
         {{ csrf_field() }}
