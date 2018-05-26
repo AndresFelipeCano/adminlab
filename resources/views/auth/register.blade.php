@@ -280,12 +280,9 @@
                                     </span>
                                 @endif
                             </div>
-                        </div>
-                        <div class="form-group row">
-                            <label for="cargo" class="col-md-4 col-form-label text-md-right">{{ __('Cargo') }}</label>
-
-                            <div class="col-md-6">
-                              <select class="form-control" id="cargo" name="cargo" type="text" required>
+                        
+                            <div class="col-md-9">
+                              <select placeholder="Cargo" class="form-control input-register" id="cargo" name="cargo" type="text" size="1.7" required>
                                 <option disabled>Seleccionar cargo</option>
                                 <option name="cargo" value="monitor" selected>Monitor</option>
                                 <option name="cargo" value="administrador">Administrador</option>
@@ -297,10 +294,7 @@
                                     </span>
                                 @endif
                             </div>
-                            <div class="form-group col-lg-6 col-md-6 col-sm-12">
-
-
-                            </div>
+                             
                         </div>
                         <div class="form-group row">
                             <div class="col-md-1">
