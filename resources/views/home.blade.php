@@ -2,119 +2,27 @@
 @section('tittle', 'Bienvenida')
 {{--Section: Styles. Aquí pones los estilos--}}
 @section('styles')
-	<style type="text/css">body {
-	font-family: 'Lato', sans-serif;
-}
-.background {
-	background: url('https://images.pexels.com/photos/91224/pexels-photo-91224.jpeg?w=940&h=650&auto=compress&cs=tinysrgb');
-	background-size: cover;
-	background-position: center;
-	background-repeat: no-repeat;
-	min-height: 100vh; // For codepen purposes, height: 100vh works just fine.
-	color: white;
-	display: flex;
-	align-items: center;
-	justify-content: center;
-	position: relative;
-	
-	&:before {
-		content: '';
-		position: absolute;
-		top: 0;
-		right: 0;
-		bottom: 0;
-		left: 0;
-		background: linear-gradient(to bottom, rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0));
-	}
-	h1 {
-		font-size: 4rem;
-		font-weight: 700;
-	}
-}
-.custom-input, .btn-custom {
-	border: 0;
-	background: transparent;
-	border-bottom: 4px solid white;
-	border-radius: 0;
-	margin-bottom: 0;
-}
-.custom-input:focus {
-	border-color: white;
-	background: transparent;
-	color: white;
-}
-.btn-custom {
-	color: white;
-	cursor: pointer;
-}
-.display-5 {
-	font-size: 1.5rem;
-}
-#greeting {
-	margin-top: 2rem;
-	font-size: 2rem;
-}
-@media (min-width: 576px) {
-	.background h1 {
-		font-size: 5.5rem;
-	}
-	.display-5 {
-		font-size: 2.5rem;
-	}
-	#greeting {
-		margin-top: 2rem;
-		font-size: 2.5rem;
-	}
-}
-@media (min-width: 992px) {
-	.background h1 {
-		font-size: 6rem;
-	}
-	#greeting {
-		font-size: 3rem;
-	}
-}
-
-@media (min-width: 1200px) {
-	.background h1 {
-		font-size: 7.5rem;
-	}
-	#greeting {
-		font-size: 3.6rem;
-	}
-}
+	<style type="text/css">
 </style>
 @endsection
 {{--End section: styles--}}
 
 {{--Section: content. Aquí creas el div principal donde irá todo tu contenido--}}
 @section('content')
-	<div class="container"><!-- Due to the codepen sandboxing the form will not submit properly in this environment -->
+	<div class="container"> <!-- Due to the codepen sandboxing the form will not submit properly in this environment -->
 <div class="background">
  <div class="container">
   <div class="row flex-column justify-content-center align-items-center text-center">
    <div class="col-sm-12 col-md-10 col-lg-8">
-    <h1 id="time">12:00 AM</h1>
-    <h3 id="day" class="display-5">Monday, January 01</h3>
-    <h2 id="greeting">Good Morning, User.</h2>
-    <h3>What would you like to inquire about today?</h3>
+    <h1 id="time" class="home-text">12:00 AM</h1>
+    <h3 id="day" class="display-5 home-text">Monday, January 01</h3>
+  	<label id="userName" style="display:none;">{{Auth::user()->name}}</label>
+    <h2 id="greeting" class="home-text">Buenos días, {{Auth::user()->name}} !</h2>
+    <h3 class="home-text">Bienvenido </h3>
    </div><!-- /.col -->
    
   </div><!-- /.row -->
-	 <div class="row justify-content-center">
-	 	<div class="col-sm-12 col-md-10 col-lg-6">
-	 		<form action="https://www.google.com/search" method="get">
-			  <div class="form-group">
-				<div class="input-group">
-				 <input type="text" name="q" class="form-control custom-input">
-				 <span class="input-group-btn">
-					<button class="btn btn-custom" type="submit"><i class="fa fa-search" aria-hidden="true"></i></button>
-				 </span>
-				</div>
-			  </div>
-			 </form>
-	 	</div><!-- /.col -->
-	 </div><!-- /.row -->
+	 
  </div><!-- /.container -->
  </div>
 
@@ -125,7 +33,7 @@
 @section('scripts')
 	<script type="text/javascript">// Document ready function
 $(function() {
-	
+
 	// Time function to get the date/time
 	function time() {
 		
@@ -136,21 +44,27 @@ $(function() {
 			ante, // Will be used for AM and PM later
 			greeting, // Set the appropriate greeting for the time of day
 			dd = date.getDate().toString(), // Get the current day
-			userName = "User"; // Can be used to insert a unique name
+			userName = $('#userName').text(), // Can be used to insert a unique name
+			good; // will be used for "buenos" o "buenas" for the time of day
 
 		/* Set the AM or PM according to the time, it is important to note that up
 			to this point in the code this is a 24 clock */
 		if (hours < 12) {
 			ante = "AM";
-			greeting = "Morning";
-		} else if (hours === 12 && hours >= 3) {
+			greeting = "Días";
+		} else if (hours >= 12 && hours >= 18) {
 			ante = "PM";
-			greeting = "Afternoon"
+			greeting = "Tardes";
 		} else {
 			ante = "PM";
-			greeting = "Evening";
+			greeting = "Noches";
 		}
-
+		/*Buenos o buenas*/
+		if (hours < 12) {
+			good = "Buenos ";
+		} else {
+			good = "Buenas ";
+		}
 		/* Since it is a 24 hour clock, 0 represents 12am, if that is the case
 		then convert that to 12 */
 		if (hours === 0) {
@@ -172,31 +86,32 @@ $(function() {
 			dd = "0" + dd;
 		}
 
+
 		// Months
 		Date.prototype.monthNames = [
-			"January",
-			"February",
-			"March",
-			"April",
-			"May",
-			"June",
-			"July",
-			"August",
-			"September",
-			"October",
-			"November",
-			"December"
+			"Enero",
+			"Febrero",
+			"Mazo",
+			"Abril",
+			"Mayo",
+			"Junio",
+			"Julio",
+			"Agosto",
+			"Septiembre",
+			"Octubre",
+			"Noviembre",
+			"Diciembre"
 		];
 
 		// Days
 		Date.prototype.weekNames = [
-			"Sunday",
-			"Monday",
-			"Tuesday",
-			"Wednesday",
-			"Thursday",
-			"Friday",
-			"Saturday"
+			"Domingo",
+			"Lunes",
+			"Martes",
+			"Miercoles",
+			"Jueves",
+			"Viernes",
+			"Sábado"
 		];
 		
 		// Return the month name according to its number value
@@ -209,10 +124,9 @@ $(function() {
 			return this.weekNames[this.getDay()];
 		};
 
-		// Display the following in html
 		$("#time").html(hours + ":" + minutes + " " + ante);
 		$("#day").html(date.getWeekName() + ", " + date.getMonthName() + " " + dd);
-		$("#greeting").html("Good " + greeting + ", " + userName + ".");
+		$("#greeting").html("¡" + good + greeting + ", " + userName + "!");
 		
 		// The interval is necessary for proper time syncing
 		setInterval(time, 1000);

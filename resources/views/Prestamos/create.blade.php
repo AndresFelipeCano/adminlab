@@ -23,7 +23,7 @@
         <li class="breadcrumb-item">Crear
 
         </li>
-        <li class="breadcrumb-item active"><a href="{{route('prestamo.index')}}">Prestamo</a></li>
+        <li class="breadcrumb-item active"><a href="{{route('prestamo.index')}}">Préstamo</a></li>
       </ol>
       
       <form class="" action="{{route('prestamo.store')}}" method="post">
