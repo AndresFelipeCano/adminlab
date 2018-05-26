@@ -40,7 +40,7 @@
       </button>
       <div class="collapse navbar-collapse" id="navbarResponsive">
         <ul class="navbar-nav navbar-sidenav" id="exampleAccordion">
-          <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Dashboard">
+          <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Logo">
             <a class="nav-link text-center" href="{{route('home')}}"  ><img src="{{asset("logo-AL.png")}}" alt="AdminLab" width="125.5" height="125.5" ></a>
           </li>
            

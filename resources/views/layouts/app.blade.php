@@ -41,22 +41,18 @@
     <meta name="theme-color" content="#ffffff">
 </head>
 <body>
-    <div id="app">
-        <nav class="navbar navbar-expand-md navbar-light navbar-laravel">
-            <div class="container">
+    
+        <nav class="navbar navbar-expand-md bg-dark navbar-laravel" >
+            
                 <a class="navbar-brand" href="{{ url('/') }}">
-                    {{ config('app.name', 'AdminLab') }}
+                    <img src="{{asset("logo-AL.png")}}" alt="AdminLab" width="125.5" height="125.5" >
                 </a>
-                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
+                
 
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
                     <!-- Left Side Of Navbar -->
                     <ul class="navbar-nav mr-auto">
-
                     </ul>
-
                     <!-- Right Side Of Navbar -->
                     <ul class="navbar-nav ml-auto">
                         <!-- Authentication Links -->
@@ -83,12 +79,11 @@
                         @endguest
                     </ul>
                 </div>
-            </div>
+            
         </nav>
-
-        <main class="py-4">
+        <div class="row">    
             @yield('content')
-        </main>
+        </div>
     </div>
 </body>
 </html>
