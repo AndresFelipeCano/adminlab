@@ -18,7 +18,7 @@ class CreateDevolucionsTable extends Migration
             $table->integer('prestamo_id');
             $table->string('carga_bateria', 2);
             $table->text('observaciones');
-            $table->integer('active')->default(0)->change();
+            $table->integer('active')->default(0);
             $table->timestamps();
         });
     }
@@ -31,5 +31,6 @@ class CreateDevolucionsTable extends Migration
     public function down()
     {
         Schema::dropIfExists('devolucions');
+        Schema::dropIfExists('monitors');
     }
 }
