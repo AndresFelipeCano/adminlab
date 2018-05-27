@@ -23,6 +23,7 @@ class CreateUsersTable extends Migration
             $table->string('cargo', 20);
             $table->string('telefono')->unique();
             $table->string('carrera');
+            $table->integer('active')->default(0);
             $table->rememberToken();
             $table->timestamps();
         });

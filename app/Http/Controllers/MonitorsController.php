@@ -20,7 +20,8 @@ class MonitorsController extends Controller
     public function index()
     {
         //
-        return view('Monitores.index', ['monitores' => User::all()]);
+        $monitores = User::where('active', '=', 0)->get();
+        return view('Monitores.index')->compact('monitors');
     }
 
     /**
@@ -53,7 +54,7 @@ class MonitorsController extends Controller
     public function edit(User $monitor)
     {
         //
-        
+
         return view('Monitores.edit', ['monitor' => $monitor]);
     }
 
@@ -80,7 +81,8 @@ class MonitorsController extends Controller
     public function destroy(User $monitor)
     {
         //
-        $monitor->delete();
+        $monitor->active = 1;
+        $monitor->push();
         return redirect()->route('monitor.index');
     }
 }

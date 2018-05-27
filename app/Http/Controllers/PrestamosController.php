@@ -51,9 +51,9 @@ class PrestamosController extends Controller
     {
         //
         $today = Carbon::now()->toDateString();
-        $monitores = User::where('cargo', '=', 'monitor')->where('active', '=', 0)->get()->get();
-        $administradores = User::where('cargo', '=', 'administrador')->where('active', '=', 0)->get()->get();
-        $equipos = Equipo::where('estado', '=', 'disponible')->where('active', '=', 0)->get()->get();
+        $monitores = User::where('cargo', '=', 'monitor')->where('active', '=', 0)->get();
+        $administradores = User::where('cargo', '=', 'administrador')->where('active', '=', 0)->get();
+        $equipos = Equipo::where('estado', '=', 'disponible')->where('active', '=', 0)->get();
         $usuarios = Usuario::where('active', '=', 0)->get();
         return view('Prestamos.create')->with(compact('today'))
         ->with(compact('monitores'))
