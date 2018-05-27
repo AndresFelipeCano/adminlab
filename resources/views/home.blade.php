@@ -54,7 +54,7 @@ $(function() {
 		if (hours < 12) {
 			ante = "AM";
 			greeting = "Días";
-		} else if (hours >= 12 || hours < 19) {
+		} else if (hours >= 12 && hours <= 18) {
 			ante = "PM";
 			greeting = "Tardes";
 		} else {
