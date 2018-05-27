@@ -46,7 +46,14 @@
                 <td><a href="{{route('equipo.show', $devolucion->prestamo->equipo)}}">{{$devolucion->prestamo->equipo->numero_equipo}}</a></td>
                 <td><a href="{{route('usuario.show', $devolucion->prestamo->usuario)}}">{{$devolucion->prestamo->usuario->nombre}} {{$devolucion->prestamo->usuario->apellido}} {{$devolucion->prestamo->usuario->id_upb}}</a></td>
                 <td><a href="{{route('monitor.show', $devolucion->user)}}">{{$devolucion->user->name}} {{$devolucion->user->id_upb}}</a></td>
-                <td>{{$devolucion->estado}}</td>
+                <td>
+                  <div class="row">
+                      {{$devolucion->estado}}
+                  </div>
+                  <div class="row">
+                    Batería: {{$devolucion->carga_bateria}}%
+                  </div>
+                </td>
                 <td>{{$devolucion->prestamo->equipo->categoria->detalles}}</td>
                 <td>{{$devolucion->observaciones}}</td>
                 <td>{{$devolucion->created_at}}</td>

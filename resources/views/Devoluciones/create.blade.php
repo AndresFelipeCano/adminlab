@@ -46,6 +46,7 @@
     </style>
   @endsection
   {{--Section: styles--}}
+  
   <div class="content-wrapper">
     <div class="container">
       <!-- Breadcrumbs-->
@@ -61,7 +62,9 @@
             <label for="prestamo_id">ID Prestamo</label>
             <select class="form-control" id="prestamo_id" name="prestamo_id" type="number">
               <option disabled selected>Seleccionar Prestamo</option>
+
               @foreach($prestamos as $prestamo)
+
                 <option name="prestamo_id" value="{{$prestamo->id}}">{{$prestamo->usuario->nombre}} - {{$prestamo->equipo->categoria->nombre}}</option>
               @endforeach
             </select>

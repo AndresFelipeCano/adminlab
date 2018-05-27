@@ -32,7 +32,7 @@ class PrestamosController extends Controller
           $values[$i] =  count(Prestamo::where('created_at', '>', Carbon::now()->subDays(7))->where('today', $date));
           $i++;
         }
-        $prestamos = Prestamo::where('created_at', '>', Carbon::now()->subDays(7))->where('active', '=', 0)->get()->get();
+        $prestamos = Prestamo::where('created_at', '>', Carbon::now()->subDays(7))->where('active', '=', 0)->get();
         $last = Prestamo::orderBy('id', 'desc')->firstOrFail();
         return view('Prestamos.index',[
           'dates' => $dates,
