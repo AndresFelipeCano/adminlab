@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Devolucion;
 use App\Prestamo;
 use App\User;
+use App\Equipo;
 use Illuminate\Http\Request;
 
 class DevolucionsController extends Controller
@@ -57,6 +58,7 @@ class DevolucionsController extends Controller
         $devolucion = new Devolucion;
         $prestamo = Prestamo::where('id', '=', $request->prestamo_id)->firstOrFail();
         $user = User::where('id_upb', '=', $request->user_id)->firstOrFail();
+        $equipo = Equipo::where('id', '=', $prestamo->equipo->id)->firstOrFail();
         $devolucion->prestamo_id = $request->prestamo_id;
         $devolucion->carga_bateria = $request->carga_bateria;
         $devolucion->observaciones = $request->observaciones;
@@ -67,6 +69,8 @@ class DevolucionsController extends Controller
         $devolucion->push();
         $prestamo->estado = "inactivo";
         $prestamo->push();
+        $equipo->estado = "disponible";;
+        $equipo->push();
 
         return redirect()->route('devolucion.index');
     }

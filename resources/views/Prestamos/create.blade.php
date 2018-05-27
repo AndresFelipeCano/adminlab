@@ -21,7 +21,6 @@
       <!-- Breadcrumbs-->
       <ol class="breadcrumb">
         <li class="breadcrumb-item">Crear
-
         </li>
         <li class="breadcrumb-item active"><a href="{{route('prestamo.index')}}">Préstamo</a></li>
       </ol>
@@ -47,11 +46,8 @@
             <select class="form-control" id="usuario_id" name="usuario_id" type="number">
               <option disabled selected>Seleccionar Usuario</option>
               @foreach($usuarios as $usuario)
-                @if($usuario->cargo === 'estudiante' && count($usuario->prestamos) < 2)
-                <option name="usuario_id" value="{{$usuario->id_upb}}">{{$usuario->nombre}} - {{$usuario->id_upb}}</option>
-              @elseif($usuario->cargo !== 'estudiante')
-                <option name="usuario_id" value="{{$usuario->id_upb}}">{{$usuario->nombre}} - {{$usuario->id_upb}}</option>
-              @endif
+                <option name="usuario_id" value="{{$usuario->id_upb}}">{{$usuario->nombre}} - {{$usuario->id_upb}} - {{$usuario->cargo}}</option>
+
               @endforeach
             </select>
             {!!$errors->first('usuario_id', '<span class=error>:message</span>')!!}
