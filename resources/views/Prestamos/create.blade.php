@@ -49,6 +49,8 @@
               @foreach($usuarios as $usuario)
                 @if($usuario->cargo === 'estudiante' && count($usuario->prestamos) < 2)
                 <option name="usuario_id" value="{{$usuario->id_upb}}">{{$usuario->nombre}} - {{$usuario->id_upb}}</option>
+              @elseif($usuario->cargo !== 'estudiante')
+                <option name="usuario_id" value="{{$usuario->id_upb}}">{{$usuario->nombre}} - {{$usuario->id_upb}}</option>
               @endif
               @endforeach
             </select>
