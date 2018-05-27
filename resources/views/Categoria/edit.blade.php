@@ -37,8 +37,9 @@
           </div>
           <div class="form-group col-lg-6 col-md-6 col-sm-12">
             <label for="detalles">Detalles</label>
-            <input type="text" class="form-control" name="detalles" placeholder="Detalles" value="{{$categorium->detalles}}">
+            <textarea type="text" class="form-control" name="detalles" placeholder="Detalles" value="{{$categorium->detalles}}">
             {!!$errors->first('apellido', '<span class=error>:message</span>')!!}
+            </textarea>
           </div>
         </div>
         <button type="submit" class="btn btn-primary">Enviar</button>

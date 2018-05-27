@@ -220,24 +220,22 @@
 
             <div class="wrapper-register">
                 <div class="container">
-                <div class="card-body">
-                <h1>Registrarse</h1>
+                <div class="card-body ">
+                 <h1 style="position: relative; left: 50px">Registrarse</h1>
                     <form method="POST" action="{{ route('register') }}" class="form-register">
                         @csrf
 
                         <div class="form-group row">
-                            <div class="col-md-1">
-                                <input placeholder="Nombre" id="name" type="text" class="form-control{{ $errors->has('name') ? ' is-invalid' : '' }} input-register" name="name" value="{{ old('name') }}" required autofocus>
+                            <div class="col-1">
+                                  <input placeholder="Nombre" id="name" type="text" class="form-control{{ $errors->has('name') ? ' is-invalid' : '' }} input-register" name="name" value="{{ old('name') }}" required autofocus>
 
-                                @if ($errors->has('name'))
-                                    <span class="invalid-feedback">
-                                        <strong>{{ $errors->first('name') }}</strong>
-                                    </span>
-                                @endif
-                            </div>
-
-
-                            <div class="col-md-9">
+                                  @if ($errors->has('name'))
+                                      <span class="invalid-feedback">
+                                          <strong>{{ $errors->first('name') }}</strong>
+                                      </span>
+                                  @endif
+                            </div>             
+                            <div class="col-md-9 offset-2">
                                 <input placeholder="Apellido" id="apellido" type="text" class="form-control{{ $errors->has('apellido') ? ' is-invalid' : '' }} input-register" name="apellido" value="{{ old('apellido') }}" required autofocus>
 
                                 @if ($errors->has('apellido'))
@@ -249,7 +247,7 @@
                         </div>
 
                         <div class="form-group row">
-                            <div class="col-md-1">
+                            <div class="col-1">
                                 <input placeholder="ID UPB" id="id_upb" type="number" class="form-control{{ $errors->has('id_upb') ? ' is-invalid' : '' }} input-register" name="id_upb" value="{{ old('id_upb') }}" required autofocus>
 
                                 @if ($errors->has('id_upb'))
@@ -258,8 +256,7 @@
                                     </span>
                                 @endif
                             </div>
-
-                            <div class="col-md-9">
+                            <div class="col-md-9 offset-2">
                                 <input placeholder="telefono" id="telefono" type="number" class="form-control{{ $errors->has('telefono') ? ' is-invalid' : '' }} input-register" name="telefono" value="{{ old('telefono') }}" required autofocus>
 
                                 @if ($errors->has('telefono'))
@@ -271,7 +268,7 @@
                         </div>
 
                         <div class="form-group row">
-                            <div class="col-md-1">
+                            <div class="col-1">
                                 <input placeholder="Carrera" id="carrera" type="text" class="form-control{{ $errors->has('carrera') ? ' is-invalid' : '' }} input-register" name="carrera" value="{{ old('carrera') }}" required>
 
                                 @if ($errors->has('carrera'))
@@ -280,12 +277,9 @@
                                     </span>
                                 @endif
                             </div>
-                        </div>
-                        <div class="form-group row">
-                            <label for="cargo" class="col-md-4 col-form-label text-md-right">{{ __('Cargo') }}</label>
-
-                            <div class="col-md-6">
-                              <select class="form-control" id="cargo" name="cargo" type="text" required>
+                        
+                            <div class="col-md-9 offset-2">
+                              <select placeholder="Cargo" class="form-control input-register" id="cargo" name="cargo" type="text" size="1.7" required>
                                 <option disabled>Seleccionar cargo</option>
                                 <option name="cargo" value="monitor" selected>Monitor</option>
                                 <option name="cargo" value="administrador">Administrador</option>
@@ -299,7 +293,7 @@
                             </div>
                         </div>
                         <div class="form-group row">
-                            <div class="col-md-1">
+                            <div class="col-1">
                                 <input placeholder="Email" id="email" type="email" class="form-control{{ $errors->has('email') ? ' is-invalid' : '' }} input-register" name="email" value="{{ old('email') }}" required>
 
                                 @if ($errors->has('email'))
@@ -308,8 +302,7 @@
                                     </span>
                                 @endif
                             </div>
-
-                            <div class="col-md-9">
+                            <div class="col-md-9 offset-2">
                                 <input placeholder="Contraseña" id="password" type="password" class="form-control{{ $errors->has('password') ? ' is-invalid' : '' }} input-register" name="password" required>
 
                                 @if ($errors->has('password'))
@@ -321,13 +314,14 @@
                         </div>
 
                         <div class="form-group row">
-                            <div class="col-md-1">
+                            <div class="col-1"></div>
+                            <div class="col-md-9 offset-2">
                                 <input placeholder="Confirmar Contraseña" id="password-confirm" type="password" class="form-control input-register" name="password_confirmation" required>
                             </div>
                         </div>
 
                         <div class="form-group row">
-                            <div class="col-md-6">
+                            <div class="col-8">
                                 <button type="submit" class="btn btn-primary input-register">
                                     {{ __('Register') }}
                                 </button>

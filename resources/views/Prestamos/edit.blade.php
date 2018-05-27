@@ -48,8 +48,9 @@
             </div>
             <div class="form-group col-lg-6 col-md-6 col-sm-12">
               <label for="id_detalles">ID Detalles</label>
-              <input type="number" name="id_detalles" placeholder="ID Detalles" class="form-control" value="{{$prestamo->id_detalles}}">
+              <textarea type="number" name="id_detalles" placeholder="ID Detalles" class="form-control" value="{{$prestamo->id_detalles}}">
               {!!$errors->first('id_detalles', '<span class=error>:message</span>')!!}
+              </textarea>
             </div>
         </div>
         <button type="submit" class="btn btn-primary">Enviar</button>
