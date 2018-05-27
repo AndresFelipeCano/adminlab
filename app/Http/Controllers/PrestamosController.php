@@ -32,7 +32,7 @@ class PrestamosController extends Controller
           $values[$i] =  count(Prestamo::where('created_at', '>', Carbon::now()->subDays(7))->where('today', $date));
           $i++;
         }
-        $prestamos = Prestamo::where('created_at', '>', Carbon::now()->subDays(7))->get();
+        $prestamos = Prestamo::where('created_at', '>', Carbon::now()->subDays(7))->where('active', '=', 0)->get()->get();
         $last = Prestamo::orderBy('id', 'desc')->firstOrFail();
         return view('Prestamos.index',[
           'dates' => $dates,
@@ -51,10 +51,10 @@ class PrestamosController extends Controller
     {
         //
         $today = Carbon::now()->toDateString();
-        $monitores = User::where('cargo', '=', 'monitor')->get();
-        $administradores = User::where('cargo', '=', 'administrador')->get();
-        $equipos = Equipo::where('estado', '=', 'disponible')->get();
-        $usuarios = Usuario::all();
+        $monitores = User::where('cargo', '=', 'monitor')->where('active', '=', 0)->get()->get();
+        $administradores = User::where('cargo', '=', 'administrador')->where('active', '=', 0)->get()->get();
+        $equipos = Equipo::where('estado', '=', 'disponible')->where('active', '=', 0)->get()->get();
+        $usuarios = Usuario::where('active', '=', 0)->get();
         return view('Prestamos.create')->with(compact('today'))
         ->with(compact('monitores'))
         ->with(compact('administradores'))
@@ -146,7 +146,8 @@ class PrestamosController extends Controller
     public function destroy(Prestamo $prestamo)
     {
         //
-        $prestamo->delete();
+        $prestamo->active = 1;
+        $prestamo->push();
         return redirect()->route('prestamo.index');
     }
 }

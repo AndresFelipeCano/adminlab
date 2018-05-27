@@ -23,7 +23,8 @@ class DevolucionsController extends Controller
     public function index()
     {
         //
-        return view('Devoluciones.index', ['devoluciones' => Devolucion::all()]);
+        $devoluciones = Devolucion::where('active', '=', 0)->get();
+        return view('Devoluciones.index')->with(compact('devoluciones'));
     }
 
     /**
@@ -122,7 +123,8 @@ class DevolucionsController extends Controller
     public function destroy(Devolucion $devolucion)
     {
         //
-        $devolucion->delete();
+        $devolucion->active = 1;
+        $devolucion->push();
         return redirect()->route('devolucion.index');
     }
 }

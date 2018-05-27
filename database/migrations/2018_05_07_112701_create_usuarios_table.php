@@ -23,6 +23,7 @@ class CreateUsuariosTable extends Migration
             $table->string('telefono')->unique();
             $table->string('carrera');
             $table->timestamps();
+            $table->integer('active')->default(0)->change();
         });
     }
 

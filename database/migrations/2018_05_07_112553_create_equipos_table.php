@@ -21,6 +21,7 @@ class CreateEquiposTable extends Migration
             $table->integer('numero_equipo')->unique();
             $table->integer('user_id');
             $table->timestamps();
+            $table->integer('active')->default(0)->change();
         });
     }
 

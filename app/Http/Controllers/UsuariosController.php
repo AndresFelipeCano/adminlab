@@ -20,7 +20,8 @@ class UsuariosController extends Controller
     public function index()
     {
         //
-        return view('Usuarios.index', ['usuarios' => Usuario::all()]);
+        $usuarios = Usuario::where('active', '=', 0)->get();
+        return view('Usuarios.index')->with(compact('usuarios'));;
     }
 
     /**
@@ -104,7 +105,8 @@ class UsuariosController extends Controller
     public function destroy(Usuario $usuario)
     {
         //
-        $usuario->delete();
+        $usuario->active = 1;
+        $usuario->push();
         return redirect()->route('usuario.index');
     }
 }

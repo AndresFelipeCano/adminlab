@@ -22,6 +22,7 @@ class CreatePrestamosTable extends Migration
             $table->string('estado');
             $table->text('today')->nullable();
             $table->timestamps();
+            $table->integer('active')->default(0)->change();
         });
     }
 

@@ -22,7 +22,7 @@ class EquiposController extends Controller
     public function index()
     {
         //
-        $equipos = Equipo::all();
+        $equipos = Equipo::where('active', '=', 0)->get();
         return view('Equipos.index')->with(compact('equipos'));
     }
 
@@ -119,7 +119,8 @@ class EquiposController extends Controller
     public function destroy(Equipo $equipo)
     {
         //
-        $usuario->delete();
+        $usuario->active = 1;
+        $usuario->push();
         return redirect()->route('equipo.index');
     }
 }
