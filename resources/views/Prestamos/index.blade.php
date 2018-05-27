@@ -68,7 +68,7 @@
           </table>
         </div>
       </div>
-      <div class="card-footer small text-muted">Última actualización ayer a las 11:59 PM</div>
+      <div class="card-footer small text-muted">Último prestamo {{$prestamos->last()->created_at}}</div>
     </div>
   </div>
   <!-- /.container-fluid-->

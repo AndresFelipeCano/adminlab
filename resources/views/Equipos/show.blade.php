@@ -44,7 +44,7 @@
               <td>{{$equipo->estado}}</td>
               <td>{{$equipo->observaciones}}</td>
               <td>
-                <a name="button" href="{{route('equipo.edit', $equipo)}}" class="btn btn-primary"> Editar</a>
+                <a name="button" href="{{route('equipo.edit', $equipo)}}" class="btn btn-primary">{{__('Editar')}}</a>
                 @if(Auth::user()->cargo === "administrador")
                   @if($equipo->active === 0)
                     <a class="btn btn-primary" href="{{route('equipo.index')}}" onclick="event.preventDefault();document.getElementById('edit-form').submit();">{{__('Eliminar')}}</a>
