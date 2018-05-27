@@ -58,6 +58,38 @@
         </tbody>
       </table>
     </div>
+    <div class="card mb-3">
+      <div class="card-header">
+        <i class="fa fa-table"></i> Historial de préstamos</div>
+      <div class="card-body">
+        <div class="table-responsive">
+          <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
+            <thead>
+              <tr>
+                <th>Número del prestamo</th>
+                <th>Solicitado por</th>
+                <th>Prestado por</th>
+                <th>Estado</th>
+                <th>Observaciones</th>
+                <th>Fecha/Hora de prestamo</th>
+              </tr>
+            </thead>
+            <tbody>
+              @foreach($usuario->prestamos as $prestamo)
+                <tr>
+                  <td><a href="{{route('prestamo.show', $prestamo)}}">{{$prestamo->id}} </a> </td>
+                  <td><a href="{{route('usuario.show', $prestamo->usuario)}}">{{$prestamo->usuario->nombre}} {{$prestamo->usuario->apellido}} {{$prestamo->usuario->id_upb}}</a> </td>
+                  <td><a href="{{route('monitor.show', $prestamo->user)}}">{{$prestamo->user->name}} {{$prestamo->user->apellido}} {{$prestamo->user->id_upb}}</a></td>
+                  <td>{{$prestamo->estado}} </td>
+                  <td>{{$prestamo->detalles_prestamo->detalles}}</td>
+                  <td>{{$prestamo->created_at}}</td>
+                </tr>
+              @endforeach
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
   </div>
 
 @endsection
