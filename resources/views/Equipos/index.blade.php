@@ -30,9 +30,9 @@
             <tr>
               <th>Número equipo</th>
               <th>Categoria</th>
+              <th>Creado por</th>
               <th>Estado</th>
               <th>Observaciones</th>
-              <th>Creado por</th>
               <th>Fecha creación</th>
             </tr>
           </thead>
@@ -42,6 +42,7 @@
 
                 <td><a href="{{route('equipo.show', $equipo)}}">{{$equipo->numero_equipo}}</a></td>
                 <td><a href="{{route('categoria.show', $equipo->categoria)}}">{{$equipo->categoria->nombre}}</a> </td>
+                <td><a href="{{route('monitor.show', $equipo->user)}}">{{$equipo->user->name}} {{$equipo->user->apellido}} {{$equipo->user->id_upb}}</a></td>
                 <td>
                   @if($equipo->estado === 'disponible')
                     Disponible
@@ -50,6 +51,8 @@
                   @endif
                 </td>
                 <td>{{$equipo->observaciones}}</td>
+                
+                <td>{{$equipo->created_at}}</td>
               </tr>
             @endforeach
           </tbody>

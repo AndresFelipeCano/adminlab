@@ -58,7 +58,7 @@
                   <td><a href="{{route('prestamo.show', $prestamo)}}">{{$prestamo->id}} </a> </td>
                   <td><a href="{{route('equipo.show', $prestamo->equipo)}}">{{$prestamo->equipo->observaciones}}</a> </td>
                   <td><a href="{{route('usuario.show', $prestamo->usuario)}}">{{$prestamo->usuario->nombre}} {{$prestamo->usuario->apellido}} {{$prestamo->usuario->id_upb}}</a> </td>
-                  <td>{{$prestamo->user->name}} {{$prestamo->user->apellido}} {{$prestamo->user->id_upb}}</td>
+                  <td><a href="{{route('monitor.show', $prestamo->user)}}">{{$prestamo->user->name}} {{$prestamo->user->apellido}} {{$prestamo->user->id_upb}}</a></td>
                   <td>{{$prestamo->estado}} </td>
                   <td>{{$prestamo->detalles_prestamo->detalles}}</td>
                   <td>{{$prestamo->created_at}}</td>

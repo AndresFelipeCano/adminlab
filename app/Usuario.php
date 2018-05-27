@@ -15,4 +15,5 @@ class Usuario extends Model
       // code...
       return $this->hasMany(Prestamo::class);
     }
+
 }

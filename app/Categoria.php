@@ -10,4 +10,9 @@ class Categoria extends Model
     protected $fillable = [
       'nombre', 'detalles'
     ];
+    public function equipos()
+    {
+      // code...
+      return $this->hasOne(Equipo::class);
+    }
 }

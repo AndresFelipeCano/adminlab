@@ -34,6 +34,11 @@ class User extends Authenticatable
     public function devolucions()
     {
       // code...
-      return $this->hasMany(Prestamo::class);
+      return $this->hasMany(Devolucion::class);
+    }
+    public function equipos()
+    {
+      // code...
+      return $this->hasMany(Equipo::class);
     }
 }
