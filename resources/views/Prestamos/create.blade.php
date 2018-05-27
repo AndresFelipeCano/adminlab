@@ -47,7 +47,9 @@
             <select class="form-control" id="usuario_id" name="usuario_id" type="number">
               <option disabled selected>Seleccionar Usuario</option>
               @foreach($usuarios as $usuario)
+                @if($usuario->cargo === 'estudiante' && count($usuario->prestamos) < 2)
                 <option name="usuario_id" value="{{$usuario->id_upb}}">{{$usuario->nombre}} - {{$usuario->id_upb}}</option>
+              @endif
               @endforeach
             </select>
             {!!$errors->first('usuario_id', '<span class=error>:message</span>')!!}

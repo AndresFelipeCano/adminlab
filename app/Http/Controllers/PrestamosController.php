@@ -32,12 +32,14 @@ class PrestamosController extends Controller
           $values[$i] =  count(Prestamo::all()->where('today', $date));
           $i++;
         }
+        $last = Prestamo::orderBy('id', 'desc')->firstOrFail();
 
         return view('Prestamos.index',[
           'prestamos' => Prestamo::all(),
           'dates' => $dates,
-          'values' => $values
-        ]);
+          'values' => $values,
+
+        ])->with(compact('last'));
     }
 
     /**
