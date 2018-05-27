@@ -1,6 +1,6 @@
 @extends('layout.app')
 
-@section('tittle', "Show Categoria");
+@section('title', "Show Categoria");
 {{--Section: content --}}
 @section('content')
 
@@ -38,18 +38,15 @@
               <td>{{$categorium->nombre}}</td>
               <td>{{$categorium->detalles}}</td>
               <td>
-                <form class="form-inline" action="{{ route('categoria.destroy', $categorium)}}" method="post">
-                  {{ csrf_field() }}
-                  {{ method_field('DELETE')}}
-                  <div class="row">
-                    <div class="col">
-                      <a name="button" href="{{route('categoria.edit', $categorium)}}" class="btn btn-primary"> Editar</a>
-                    </div>
-                    <div class="col">
-                      <button type="submit" class="btn btn-primary">Eliminar</button>
-                    </div>
-                  </div>
+                <a name="button" href="{{route('categoria.edit', $categorium)}}" class="btn btn-primary"> Editar</a>
+                @if(Auth::user()->cargo === "administrador")
+                <a class="btn btn-primary" href="{{route('categoria.index')}}" onclick="event.preventDefault();document.getElementById('edit-form').submit();">{{__('Eliminar')}}
+                </a>
+                <form id="edit-form" action="{{ route('categoria.destroy', $categorium) }}" method="POST" style="display: none;">
+                    @csrf
+                    {{method_field('DELETE')}}
                 </form>
+                @endif
               </td>
             </tr>
         </tbody>

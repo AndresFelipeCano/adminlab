@@ -10,7 +10,7 @@
     <!-- CSRF Token -->
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
-    <title>@yield('tittle') {{ config('app.name', 'Adminlab') }}</title>
+    <title>@yield('title') {{ config('app.name', 'Adminlab') }}</title>
 
     <!-- Scripts -->
     <script src="{{ asset('js/app.js') }}" defer></script>
@@ -41,13 +41,13 @@
     <meta name="theme-color" content="#ffffff">
 </head>
 <body>
-    
+
         <nav class="navbar navbar-expand-md bg-dark navbar-laravel" >
-            
+
                 <a class="navbar-brand" href="{{ url('/') }}">
                     <img src="{{asset("logo-AL.png")}}" alt="AdminLab" width="125.5" height="125.5" >
                 </a>
-                
+
 
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
                     <!-- Left Side Of Navbar -->
@@ -79,9 +79,9 @@
                         @endguest
                     </ul>
                 </div>
-            
+
         </nav>
-        <div class="row">    
+        <div class="row">
             @yield('content')
         </div>
     </div>

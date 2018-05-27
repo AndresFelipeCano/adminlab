@@ -42,13 +42,15 @@
               <td>{{$detallesPrestamo->id_externo}}</td>
               <td>{{$detallesPrestamo->detalles}}</td>
               <td>
-                <form class="form-inline" action="{{ route('detallesprestamo.destroy', $detallesPrestamo)}}" method="post">
-                  {{ csrf_field() }}
-                  {{ method_field('DELETE')}}
-                  <a name="button" href="{{route('detallesprestamo.edit', $detallesPrestamo)}}" class="btn btn-primary"> Editar</a>
-                  <button type="submit" class="btn btn-primary">Eliminar</button>
-
+                <a name="button" href="{{route('detallesprestamo.edit', $detallesPrestamo)}}" class="btn btn-primary"> Editar</a>
+                @if(Auth::user()->cargo === "administrador")
+                <a class="btn btn-primary" href="{{route('detallesprestamo.index')}}" onclick="event.preventDefault();document.getElementById('edit-form').submit();">{{__('Eliminar')}}
+                </a>
+                <form id="edit-form" action="{{ route('detallesprestamo.destroy', $detallesPrestamo) }}" method="POST" style="display: none;">
+                    @csrf
+                    {{method_field('DELETE')}}
                 </form>
+                @endif
               </td>
             </tr>
         </tbody>

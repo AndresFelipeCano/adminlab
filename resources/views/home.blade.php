@@ -1,6 +1,6 @@
 @extends('layout.app')
 
-@section('tittle', 'Bienvenida')
+@section('title', 'Bienvenida')
 {{--Section: Styles. Aquí pones los estilos--}}
 @section('styles')
 	<style type="text/css">
@@ -19,11 +19,11 @@
     <h3 id="day" class="display-5 home-text">Monday, January 01</h3>
   	<label id="userName" style="display:none;">{{Auth::user()->name}}</label>
     <h2 id="greeting" class="home-text">Buenos días, {{Auth::user()->name}} !</h2>
-    
+
    </div><!-- /.col -->
-   
+
   </div><!-- /.row -->
-	 
+
  </div><!-- /.container -->
  </div>
 
@@ -38,7 +38,7 @@ $(function() {
 
 	// Time function to get the date/time
 	function time() {
-		
+
 		// Create new date var and init other vars
 		var date = new Date(),
 			hours = date.getHours(), // Get the hours
@@ -71,7 +71,7 @@ $(function() {
 		then convert that to 12 */
 		if (hours === 0) {
 			hours = 12;
-			
+
 			/* For any other case where hours is not equal to twelve, let's use modulus
 			to get the corresponding time equivilant */
 		} else if (hours !== 12) {
@@ -115,12 +115,12 @@ $(function() {
 			"Viernes",
 			"Sábado"
 		];
-		
+
 		// Return the month name according to its number value
 		Date.prototype.getMonthName = function() {
 			return this.monthNames[this.getMonth()];
 		};
-		
+
 		// Return the day's name according to its number value
 		Date.prototype.getWeekName = function() {
 			return this.weekNames[this.getDay()];
@@ -129,7 +129,7 @@ $(function() {
 		$("#time").html(hours + ":" + minutes + " " + ante);
 		$("#day").html(date.getWeekName() + ", " + date.getMonthName() + " " + dd);
 		$("#greeting").html("¡" + good + greeting + ", " + userName + "!");
-		
+
 		// The interval is necessary for proper time syncing
 		setInterval(time, 1000);
 	}

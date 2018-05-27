@@ -1,6 +1,6 @@
 @extends('layout.app')
 
-@section('tittle', "Index Caategoria");
+@section('title', "Index Caategoria");
 
 {{--Section: content --}}
 @section('content')

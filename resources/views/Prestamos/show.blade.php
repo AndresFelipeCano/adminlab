@@ -44,13 +44,15 @@
               <td>{{$prestamo->id_equipo}}</td>
               <td>{{$prestamo->id_detalles}}</td>
               <td>
-                <form class="form-inline" action="{{ route('prestamo.destroy', $prestamo)}}" method="post">
-                  {{ csrf_field() }}
-                  {{ method_field('DELETE')}}
-                  <a name="button" href="{{route('prestamo.edit', $prestamo)}}" class="btn btn-primary"> Editar</a>
-                  <button type="submit" class="btn btn-primary">Eliminar</button>
-
+                <a name="button" href="{{route('prestamo.edit', $prestamo)}}" class="btn btn-primary"> Editar</a>
+                @if(Auth::user()->cargo === "administrador")
+                <a class="btn btn-primary" href="{{route('prestamo.index')}}" onclick="event.preventDefault();document.getElementById('edit-form').submit();">{{__('Eliminar')}}
+                </a>
+                <form id="edit-form" action="{{ route('prestamo.destroy', $prestamo) }}" method="POST" style="display: none;">
+                    @csrf
+                    {{method_field('DELETE')}}
                 </form>
+                @endif
               </td>
             </tr>
         </tbody>

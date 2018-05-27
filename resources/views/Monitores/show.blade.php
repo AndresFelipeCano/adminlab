@@ -47,12 +47,14 @@
               <td>{{$monitor->telefono}}</td>
               <td>
                 <a name="button" href="{{route('monitor.edit', $monitor)}}" class="btn btn-primary"> Editar</a>
+                @if(Auth::user()->cargo === "administrador")
                 <a class="btn btn-primary" href="{{route('monitor.index')}}" onclick="event.preventDefault();document.getElementById('edit-form').submit();">{{__('Eliminar')}}
                 </a>
                 <form id="edit-form" action="{{ route('monitor.destroy', $monitor) }}" method="POST" style="display: none;">
                     @csrf
                     {{method_field('DELETE')}}
                 </form>
+                @endif
               </td>
             </tr>
         </tbody>

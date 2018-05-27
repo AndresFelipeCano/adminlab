@@ -44,18 +44,15 @@
               <td>{{$equipo->estado}}</td>
               <td>{{$equipo->observaciones}}</td>
               <td>
-                <form class="form-inline" action="{{ route('equipo.destroy', $equipo)}}" method="post">
-                  @csrf
-                  {{ method_field('DELETE')}}
-                  <div class="row">
-                    <div class="col">
-                      <a name="button" href="{{route('equipo.edit', $equipo)}}" class="btn btn-primary"> Editar</a>
-                    </div>
-                    <div class="col">
-                      <button type="submit" class="btn btn-primary">Eliminar</button>
-                    </div>
-                  </div>
+                <a name="button" href="{{route('equipo.edit', $equipo)}}" class="btn btn-primary"> Editar</a>
+                @if(Auth::user()->cargo === "administrador")
+                <a class="btn btn-primary" href="{{route('equipo.index')}}" onclick="event.preventDefault();document.getElementById('edit-form').submit();">{{__('Eliminar')}}
+                </a>
+                <form id="edit-form" action="{{ route('equipo.destroy', $equipo) }}" method="POST" style="display: none;">
+                    @csrf
+                    {{method_field('DELETE')}}
                 </form>
+                @endif
               </td>
             </tr>
         </tbody>
