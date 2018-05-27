@@ -31,17 +31,21 @@
     <!-- Bootstrap core CSS -->
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
   </head>
-  <body class="fixed-nav sticky-footer bg-dark" id="page-top">
+  <body class="fixed-nav sticky-footer bg-dark barra-superior" id="page-top">
     <!-- Navigation-->
-    <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top" id="mainNav">
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top barra-superior" id="mainNav">
 
       <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
       <div class="collapse navbar-collapse" id="navbarResponsive">
+
         <ul class="navbar-nav navbar-sidenav" id="exampleAccordion">
-          <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Logo">
-            <a class="nav-link text-center" href="{{route('home')}}"  ><img src="{{asset("logo-AL.png")}}" alt="AdminLab" width="125.5" height="125.5" ></a>
+          <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Inicio">
+            <a class="nav-link text-center" href="{{route('home')}}">
+            <span class="nav-link-text" ><img src="{{asset("logo-AL.png")}}" alt="AdminLab" width="125.5" height="125.5" ></span>
+            <i class="text-center" ><img src="{{asset("Logo-Mini.png")}}" alt="AdminLab" width="30" height="30" ></i>
+            </a>
           </li>
 
           <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Dashboard">
@@ -97,7 +101,7 @@
         <ul class="navbar-nav ml-auto">
           <li class="nav-item hide-button">
             <a class="nav-link" data-toggle="modal" data-target="#exampleModal">
-              <i class="fa fa-fw fa-sign-out"></i>Salir</a>
+              <i class="fa fa-fw fa-sign-out"></i>Cerrar Sesión</a>
           </li>
         </ul>
       </div>

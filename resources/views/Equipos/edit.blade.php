@@ -51,8 +51,9 @@
           </div>
           <div class="form-group col-lg-6 col-md-6 col-sm-12">
             <label for="observaciones">Observaciones</label>
-            <input type="text" name="observaciones" placeholder="Observaciones" class="form-control" value="{{$equipo->observaciones}}">
+            <textarea type="text" name="observaciones" placeholder="Observaciones" class="form-control" value="{{$equipo->observaciones}}">
             {!!$errors->first('observaciones', '<span class=error>:message</span>')!!}
+            </textarea>
           </div>
           <div class="form-group col-lg-6 col-md-6 col-sm-12">
             <label for="numero_equipo">Número Equipo</label>

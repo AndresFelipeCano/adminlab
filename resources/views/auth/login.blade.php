@@ -268,7 +268,7 @@
                                 </div>
 
                                 <div class="form-group row">
-                                    <div class="col-md-6 offset-md-3">
+                                    <div class="col-md-6 ">
                                         <div class="checkbox input-login-checkbox">
                                             <label>
                                                 <input type="checkbox" name="remember" {{ old('remember') ? 'checked' : '' }}> {{ __('Recordarme en este equipo') }}

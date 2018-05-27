@@ -46,9 +46,14 @@
                 <form class="form-inline" action="{{ route('devolucion.destroy', $devolucion)}}" method="post">
                   {{ csrf_field() }}
                   {{ method_field('DELETE')}}
-                  <a name="button" href="{{route('devolucion.edit', $devolucion)}}" class="btn btn-primary"> Editar</a>
-                  <button type="submit" class="btn btn-primary">Eliminar</button>
-
+                  <div class="row">
+                    <div class="col">
+                      <a name="button" href="{{route('devoluciones.edit', $devolucion)}}" class="btn btn-primary"> Editar</a>
+                    </div>
+                    <div class="col">
+                      <button type="submit" class="btn btn-primary">Eliminar</button>
+                    </div>
+                  </div>
                 </form>
               </td>
             </tr>

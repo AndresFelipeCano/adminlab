@@ -41,9 +41,14 @@
                 <form class="form-inline" action="{{ route('categoria.destroy', $categorium)}}" method="post">
                   {{ csrf_field() }}
                   {{ method_field('DELETE')}}
-                  <a name="button" href="{{route('categoria.edit', $categorium)}}" class="btn btn-primary"> Editar</a>
-                  <button type="submit" class="btn btn-primary">Eliminar</button>
-
+                  <div class="row">
+                    <div class="col">
+                      <a name="button" href="{{route('categoria.edit', $categorium)}}" class="btn btn-primary"> Editar</a>
+                    </div>
+                    <div class="col">
+                      <button type="submit" class="btn btn-primary">Eliminar</button>
+                    </div>
+                  </div>
                 </form>
               </td>
             </tr>
