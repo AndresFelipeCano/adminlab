@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Equipo;
 use App\Categoria;
+use App\User;
 use Illuminate\Http\Request;
 
 class EquiposController extends Controller
@@ -55,7 +56,18 @@ class EquiposController extends Controller
           'numero_equipo' => 'required|unique:equipos',
           'user_id' => 'required'
         ]);
-        Equipo::create($request->all());
+        $user = User::where('id_upb', '=', $request->user_id)->firstOrFail();
+        $categoria = Categoria::where('id', '=', $request->categoria_id)->firstOrFail();
+        $equipo = new Equipo;
+        $equipo->categoria_id = $request->categoria_id;
+        $equipo->estado = $request->estado;
+        $equipo->observaciones = $request->observaciones;
+        $equipo->numero_equipo = $request->numero_equipo;
+        $equipo->user_id = $request->user_id;
+        $equipo->save();
+        $equipo->user()->associate($user);
+        $equipo->categoria()->associate($categoria);
+        $equipo->push();
         return redirect()->route('equipo.index');
     }
 

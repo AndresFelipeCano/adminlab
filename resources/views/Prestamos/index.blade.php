@@ -31,7 +31,7 @@
       <div class="card-body">
         <canvas id="myAreaChart" width="100%" height="30"></canvas>
       </div>
-      <div class="card-footer small text-muted">Última actualización ayer a las 11:59 PM</div>
+      <div class="card-footer small text-muted">Última actualización {{$last->updated_at}}</div>
     </div>
 
     <!-- Tabla donde visualizaremos los prestamos-->
@@ -43,23 +43,25 @@
           <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
             <thead>
               <tr>
-                <th>ID del usuario</th>
-                <th>ID del monitor</th>
-                <th>ID del equipo</th>
-                <th>Hora del préstamo</th>
-                <th>Hora de la entrega</th>
-                <th>ID detalles</th>
+                <th>Número del prestamo</th>
+                <th>Equipo</th>
+                <th>Solicitado por</th>
+                <th>Prestado por</th>
+                <th>Estado</th>
+                <th>Observaciones</th>
+                <th>Fecha/Hora de prestamo</th>
               </tr>
             </thead>
             <tbody>
               @foreach($prestamos as $prestamo)
                 <tr>
-                  <td>{{$prestamo->id_usuario}}</td>
-                  <td>{{$prestamo->id_monitor}}</td>
-                  <td>{{$prestamo->id_equipo}}</td>
+                  <td><a href="{{route('prestamo.show', $prestamo)}}">{{$prestamo->id}} </a> </td>
+                  <td><a href="{{route('equipo.show', $prestamo->equipo)}}">{{$prestamo->equipo->observaciones}}</a> </td>
+                  <td><a href="{{route('usuario.show', $prestamo->usuario)}}">{{$prestamo->usuario->nombre}} {{$prestamo->usuario->apellido}} {{$prestamo->usuario->id_upb}}</a> </td>
+                  <td><a href="{{route('monitor.show', $prestamo->user)}}">{{$prestamo->user->name}} {{$prestamo->user->apellido}} {{$prestamo->user->id_upb}}</a></td>
+                  <td>{{$prestamo->estado}} </td>
+                  <td>{{$prestamo->detalles_prestamo->detalles}}</td>
                   <td>{{$prestamo->created_at}}</td>
-                  <td>2 horas</td>
-                  <td>{{$prestamo->id_detalles}}</td>
                 </tr>
               @endforeach
             </tbody>

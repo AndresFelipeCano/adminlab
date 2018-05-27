@@ -29,6 +29,16 @@ class User extends Authenticatable
     public function prestamos()
     {
       // code...
-      return $this->hasOne(Prestamo::class);
+      return $this->hasMany(Prestamo::class);
+    }
+    public function devolucions()
+    {
+      // code...
+      return $this->hasMany(Devolucion::class);
+    }
+    public function equipos()
+    {
+      // code...
+      return $this->hasMany(Equipo::class);
     }
 }

@@ -37,12 +37,13 @@
           </tr>
         </thead>
         <tbody>
+          {{dd($devolucion->prestamo->user)}}
             <tr>
               <td>{{$devolucion->id_upb}}</td>
               <td>{{$devolucion->carga_bateria}}</td>
               <td>{{$devolucion->observaciones}}</td>
               <td>
-                <form class="form-inline" action="{{ route('devoluciones.destroy', $devolucion)}}" method="post">
+                <form class="form-inline" action="{{ route('devolucion.destroy', $devolucion)}}" method="post">
                   {{ csrf_field() }}
                   {{ method_field('DELETE')}}
                   <div class="row">

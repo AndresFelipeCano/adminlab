@@ -25,19 +25,21 @@ class PrestamosController extends Controller
     public function index()
     {
         //
-        $dates = Prestamo::all()->pluck('today')->unique()->toArray();
+        $dates = Prestamo::where('created_at', '>', Carbon::now()->subDays(7))->pluck('today')->unique()->toArray();
         $values[0] = 0;
         $i = 0;
         foreach($dates as $date){
-          $values[$i] =  count(Prestamo::all()->where('today', $date));
+          $values[$i] =  count(Prestamo::where('created_at', '>', Carbon::now()->subDays(7))->where('today', $date));
           $i++;
         }
-
+        $prestamos = Prestamo::where('created_at', '>', Carbon::now()->subDays(7))->get();
+        $last = Prestamo::orderBy('id', 'desc')->firstOrFail();
         return view('Prestamos.index',[
-          'prestamos' => Prestamo::all(),
           'dates' => $dates,
-          'values' => $values
-        ]);
+          'values' => $values,
+
+        ])->with(compact('last'))
+        ->with(compact('prestamos'));
     }
 
     /**
@@ -92,6 +94,8 @@ class PrestamosController extends Controller
         $prestamo->usuario()->associate($usuario);
         $prestamo->equipo()->associate($equipo);
         $prestamo->push();
+        $equipo->estado = "no_disponible";
+        $equipo->push();
         return redirect()->route('prestamo.index');
     }
 

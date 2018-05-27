@@ -44,11 +44,10 @@
               <td>{{$prestamo->id_equipo}}</td>
               <td>{{$prestamo->id_detalles}}</td>
               <td>
-                <form class="form-inline" action="{{ route('prestamo.destroy', $usuario)}}" method="post">
+                <form class="form-inline" action="{{ route('prestamo.destroy', $prestamo)}}" method="post">
                   {{ csrf_field() }}
                   {{ method_field('DELETE')}}
-                  <a name="button" href="{{route('prestamo.edit', $usuario)}}" class="btn btn-primary"> Editar</a>
-                  
+                  <a name="button" href="{{route('prestamo.edit', $prestamo)}}" class="btn btn-primary"> Editar</a>
                   <button type="submit" class="btn btn-primary">Eliminar</button>
 
                 </form>

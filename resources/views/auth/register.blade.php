@@ -99,7 +99,7 @@
   height: 40px;
   background-color: rgba(255, 255, 255, 0.15);
   bottom: -160px;
-  animation: square 25s infinite; 
+  animation: square 25s infinite;
   transition-timing-function: linear;
 }
 .bg-bubbles li:nth-child(1) {
@@ -115,7 +115,7 @@
 .bg-bubbles li:nth-child(3) {
   left: 25%;
   animation-delay: 4s;
-  
+
 }
 .bg-bubbles li:nth-child(4) {
   left: 40%;
@@ -159,37 +159,37 @@
   left: 90%;
   width: 160px;
   height: 160px;
-  animation-delay: 11s;        
+  animation-delay: 11s;
 }
 .bg-bubbles li:nth-child(11) {
   left: 95%;
   width: 30px;
   height: 30px;
-  animation-delay: 15s;        
+  animation-delay: 15s;
 }
 .bg-bubbles li:nth-child(12) {
   left: 82%;
   width: 65px;
   height: 65px;
-  animation-delay: 11s;        
+  animation-delay: 11s;
 }
 .bg-bubbles li:nth-child(13) {
   left: 50%;
   width: 120px;
   height: 120px;
-  animation-delay: 45s;        
+  animation-delay: 45s;
 }
 .bg-bubbles li:nth-child(14) {
   left: 78%;
   width: 160px;
   height: 160px;
-  animation-delay: 45s;        
+  animation-delay: 45s;
 }
 .bg-bubbles li:nth-child(15) {
   left: 82%;
   width: 90px;
   height: 90px;
-  animation-delay: 50s;        
+  animation-delay: 50s;
 }
 .remember{
    right: 300px;
@@ -234,8 +234,7 @@
                                           <strong>{{ $errors->first('name') }}</strong>
                                       </span>
                                   @endif
-                            </div>
-                                               
+                            </div>             
                             <div class="col-md-9 offset-2">
                                 <input placeholder="Apellido" id="apellido" type="text" class="form-control{{ $errors->has('apellido') ? ' is-invalid' : '' }} input-register" name="apellido" value="{{ old('apellido') }}" required autofocus>
 
@@ -257,7 +256,6 @@
                                     </span>
                                 @endif
                             </div>
-                        
                             <div class="col-md-9 offset-2">
                                 <input placeholder="telefono" id="telefono" type="number" class="form-control{{ $errors->has('telefono') ? ' is-invalid' : '' }} input-register" name="telefono" value="{{ old('telefono') }}" required autofocus>
 
@@ -293,7 +291,6 @@
                                     </span>
                                 @endif
                             </div>
-                             
                         </div>
                         <div class="form-group row">
                             <div class="col-1">
@@ -305,7 +302,6 @@
                                     </span>
                                 @endif
                             </div>
-                        
                             <div class="col-md-9 offset-2">
                                 <input placeholder="Contraseña" id="password" type="password" class="form-control{{ $errors->has('password') ? ' is-invalid' : '' }} input-register" name="password" required>
 
@@ -354,5 +350,5 @@
                     </div>
                 </div>
             </div>
-        
+
 @endsection

@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateDevolucionsTable extends Migration
+class AddUserIdToDevolucionsTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,12 +13,9 @@ class CreateDevolucionsTable extends Migration
      */
     public function up()
     {
-        Schema::create('devolucions', function (Blueprint $table) {
-            $table->increments('id');
-            $table->integer('prestamo_id');
-            $table->string('carga_bateria', 2);
-            $table->text('observaciones');
-            $table->timestamps();
+        Schema::table('devolucions', function (Blueprint $table) {
+            //
+            $table->integer('user_id')->after('estado');
         });
     }
 
@@ -29,6 +26,9 @@ class CreateDevolucionsTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('devolucions');
+        Schema::table('devolucions', function (Blueprint $table) {
+            //
+            $table->dropColumn('user_id');
+        });
     }
 }
