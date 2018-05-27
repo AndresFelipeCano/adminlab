@@ -43,7 +43,7 @@
             {!!$errors->first('nombre', '<span class=error>:message</span>')!!}
           </div>
           <div class="form-group col-lg-6 col-md-6 col-sm-12">
-            <label for="apellido">Apellido</label>
+            <label for="apellido">Apellidos</label>
             <input type="text" class="form-control" name="apellido" placeholder="Apellido" value="{{old('apellido')}}">
             {!!$errors->first('apellido', '<span class=error>:message</span>')!!}
           </div>
@@ -59,7 +59,7 @@
           </div>
           <div class="form-group col-lg-6 col-md-6 col-sm-12">
             <label for="cargo">Cargo</label>
-            <input type="text" class="form-control" name="cargo" placeholder="Cargo" value="{{old('cargo')}}">
+            <input type="text" class="form-control" name="cargo" placeholder="Cargo" value="Estudiante">
             {!!$errors->first('cargo', '<span class=error>:message</span>')!!}
           </div>
         </div>

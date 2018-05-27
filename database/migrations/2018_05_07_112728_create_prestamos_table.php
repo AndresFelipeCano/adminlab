@@ -21,8 +21,9 @@ class CreatePrestamosTable extends Migration
             $table->integer('equipo_id');
             $table->string('estado');
             $table->text('today')->nullable();
+            $table->integer('active')->default(0);
             $table->timestamps();
-            $table->integer('active')->default(0)->change();
+
         });
     }
 

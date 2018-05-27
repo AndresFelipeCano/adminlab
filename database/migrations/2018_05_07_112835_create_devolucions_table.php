@@ -18,8 +18,8 @@ class CreateDevolucionsTable extends Migration
             $table->integer('prestamo_id');
             $table->string('carga_bateria', 2);
             $table->text('observaciones');
-            $table->timestamps();
             $table->integer('active')->default(0)->change();
+            $table->timestamps();
         });
     }
 

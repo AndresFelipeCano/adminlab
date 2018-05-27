@@ -22,8 +22,8 @@ class CreateUsuariosTable extends Migration
             $table->string('cargo', 20);
             $table->string('telefono')->unique();
             $table->string('carrera');
+            $table->integer('active')->default(0);
             $table->timestamps();
-            $table->integer('active')->default(0)->change();
         });
     }
 

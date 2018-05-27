@@ -20,8 +20,8 @@ class CreateEquiposTable extends Migration
             $table->text('observaciones');
             $table->integer('numero_equipo')->unique();
             $table->integer('user_id');
+            $table->integer('active')->default(0);
             $table->timestamps();
-            $table->integer('active')->default(0)->change();
         });
     }
 
