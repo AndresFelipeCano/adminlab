@@ -70,7 +70,7 @@
           </div>
           <div class="form-group col-lg-6 col-md-6 col-sm-12">
             <label for="today">Fecha de hoy</label>
-            <input type="text" name="today" placeholder="" class="form-control" value="{{$today}}">
+            <input type="text" name="today" placeholder="" class="form-control" value="{{$today}}" readonly>
             {!!$errors->first('today', '<span class=error>:message</span>')!!}
           </div>
           <input type="text" name="estado" placeholder="" class="form-control" value="{{__('activo')}}" style="display:none;">

@@ -27,6 +27,6 @@ class Equipo extends Model
     public function prestamos()
     {
       // code...
-      return $this->hasOne(Prestamo::class);
+      return $this->hasMany(Prestamo::class);
     }
 }

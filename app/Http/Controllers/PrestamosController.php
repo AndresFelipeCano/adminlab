@@ -92,6 +92,8 @@ class PrestamosController extends Controller
         $prestamo->usuario()->associate($usuario);
         $prestamo->equipo()->associate($equipo);
         $prestamo->push();
+        $equipo->estado = "no_disponible";
+        $equipo->push();
         return redirect()->route('prestamo.index');
     }
 
