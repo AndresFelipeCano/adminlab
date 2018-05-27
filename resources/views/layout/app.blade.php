@@ -43,8 +43,8 @@
         <ul class="navbar-nav navbar-sidenav" id="exampleAccordion">
           <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Inicio">
             <a class="nav-link text-center" href="{{route('home')}}">
-            <i class="text-center"><img src="{{asset("Logo-Mini.png")}}" alt="AdminLab" width="30" height="30" ></i>
-            <span class="nav-link-text"><img src="{{asset("logo-AL.png")}}" alt="AdminLab" width="125.5" height="125.5" ></span>
+            <span class="nav-link-text" ><img src="{{asset("logo-AL.png")}}" alt="AdminLab" width="125.5" height="125.5" ></span>
+            <i class="text-center" ><img src="{{asset("Logo-Mini.png")}}" alt="AdminLab" width="30" height="30" ></i>
             </a>
           </li>
 
