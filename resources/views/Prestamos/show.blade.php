@@ -48,6 +48,7 @@
                   {{ csrf_field() }}
                   {{ method_field('DELETE')}}
                   <a name="button" href="{{route('prestamo.edit', $usuario)}}" class="btn btn-primary"> Editar</a>
+                  
                   <button type="submit" class="btn btn-primary">Eliminar</button>
 
                 </form>

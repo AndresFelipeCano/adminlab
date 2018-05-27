@@ -39,7 +39,7 @@
         <span class="navbar-toggler-icon"></span>
       </button>
       <div class="collapse navbar-collapse" id="navbarResponsive">
-      
+
         <ul class="navbar-nav navbar-sidenav" id="exampleAccordion">
           <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Inicio">
             <a class="nav-link text-center" href="{{route('home')}}">
@@ -101,7 +101,7 @@
         <ul class="navbar-nav ml-auto">
           <li class="nav-item hide-button">
             <a class="nav-link" data-toggle="modal" data-target="#exampleModal">
-              <i class="fa fa-fw fa-sign-out"></i>Salir</a>
+              <i class="fa fa-fw fa-sign-out"></i>Cerrar Sesión</a>
           </li>
         </ul>
       </div>

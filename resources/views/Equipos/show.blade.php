@@ -47,9 +47,14 @@
                 <form class="form-inline" action="{{ route('equipo.destroy', $equipo)}}" method="post">
                   @csrf
                   {{ method_field('DELETE')}}
-                  <a name="button" href="{{route('equipo.edit', $equipo)}}" class="btn btn-primary"> Editar</a>
-                  <button type="submit" class="btn btn-primary">Eliminar</button>
-
+                  <div class="row">
+                    <div class="col">
+                      <a name="button" href="{{route('equipo.edit', $equipo)}}" class="btn btn-primary"> Editar</a>
+                    </div>
+                    <div class="col">
+                      <button type="submit" class="btn btn-primary">Eliminar</button>
+                    </div>
+                  </div>
                 </form>
               </td>
             </tr>
