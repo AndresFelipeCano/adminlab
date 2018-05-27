@@ -45,8 +45,12 @@
               <td>
                 <a name="button" href="{{route('devolucion.edit', $devolucion)}}" class="btn btn-primary"> Editar</a>
                 @if(Auth::user()->cargo === "administrador")
-                <a class="btn btn-primary" href="{{route('devolucion.index')}}" onclick="event.preventDefault();document.getElementById('edit-form').submit();">{{__('Eliminar')}}
-                </a>
+                  @if($devolucion->active === 0)
+                    <a class="btn btn-primary" href="{{route('devolucion.index')}}" onclick="event.preventDefault();document.getElementById('edit-form').submit();">{{__('Eliminar')}}</a>
+                  @else
+                    <a class="btn btn-primary" href="{{route('devolucion.index')}}" onclick="event.preventDefault();document.getElementById('edit-form').submit();">{{__('Reestablecer')}}</a>
+                  @endif
+
                 <form id="edit-form" action="{{ route('devolucion.destroy', $devolucion) }}" method="POST" style="display: none;">
                     @csrf
                     {{method_field('DELETE')}}

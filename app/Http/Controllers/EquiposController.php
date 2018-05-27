@@ -92,7 +92,7 @@ class EquiposController extends Controller
     public function edit(Equipo $equipo)
     {
         //
-        $categorias =  Categoria::all();
+        $categorias =  Categoria::where('active', '=', 0)->get();
         return view('Equipos.edit')->with(compact('equipo'))->with(compact('categorias'));
     }
 
@@ -119,8 +119,14 @@ class EquiposController extends Controller
     public function destroy(Equipo $equipo)
     {
         //
-        $usuario->active = 1;
-        $usuario->push();
+        if($equipo->active === 0){
+          $equipo->active = 1;
+        }
+        else {
+          // code...
+          $equipo->active = 0;
+        }
+        $equipo->push();
         return redirect()->route('equipo.index');
     }
 }

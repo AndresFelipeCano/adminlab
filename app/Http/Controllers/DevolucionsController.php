@@ -123,7 +123,12 @@ class DevolucionsController extends Controller
     public function destroy(Devolucion $devolucion)
     {
         //
-        $devolucion->active = 1;
+        if($devolucion->active === 0){
+            $devolucion->active = 1;
+        }
+        else{
+          $devolucion->active = 0;
+        }
         $devolucion->push();
         return redirect()->route('devolucion.index');
     }

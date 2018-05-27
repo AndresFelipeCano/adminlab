@@ -105,7 +105,12 @@ class UsuariosController extends Controller
     public function destroy(Usuario $usuario)
     {
         //
-        $usuario->active = 1;
+        if($usuario->active === 0){
+          $usuario->active = 1;
+        }
+        else{
+          $usuario->active = 0;
+        }
         $usuario->push();
         return redirect()->route('usuario.index');
     }

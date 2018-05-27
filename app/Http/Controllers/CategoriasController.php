@@ -100,7 +100,13 @@ class CategoriasController extends Controller
     public function destroy(Categoria $categorium)
     {
         //
-        $categorium->delete();
+        if($categorium->active === 0){
+          $categorium->active = 1;
+        }
+        else{
+          $categorium->active = 0;
+        }
+        $categorium->push();
         return redirect()->route('categoria.index');
     }
 }

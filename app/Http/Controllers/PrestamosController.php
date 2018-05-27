@@ -146,7 +146,12 @@ class PrestamosController extends Controller
     public function destroy(Prestamo $prestamo)
     {
         //
-        $prestamo->active = 1;
+        if($prestamo->active === 0){
+          $prestamo->active = 1;
+        }
+        else{
+          $prestamo->active = 0;
+        }
         $prestamo->push();
         return redirect()->route('prestamo.index');
     }

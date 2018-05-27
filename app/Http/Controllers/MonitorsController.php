@@ -81,7 +81,12 @@ class MonitorsController extends Controller
     public function destroy(User $monitor)
     {
         //
-        $monitor->active = 1;
+        if($monitor->active === 0){
+          $monitor->active = 1;
+        }
+        else{
+          $monitor->active = 0;
+        }
         $monitor->push();
         return redirect()->route('monitor.index');
     }

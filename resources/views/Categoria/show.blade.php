@@ -40,8 +40,11 @@
               <td>
                 <a name="button" href="{{route('categoria.edit', $categorium)}}" class="btn btn-primary"> Editar</a>
                 @if(Auth::user()->cargo === "administrador")
-                <a class="btn btn-primary" href="{{route('categoria.index')}}" onclick="event.preventDefault();document.getElementById('edit-form').submit();">{{__('Eliminar')}}
-                </a>
+                  @if($categorium->active === 0)
+                    <a class="btn btn-primary" href="{{route('categoria.index')}}" onclick="event.preventDefault();document.getElementById('edit-form').submit();">{{__('Eliminar')}}</a>
+                  @else
+                    <a class="btn btn-primary" href="{{route('categoria.index')}}" onclick="event.preventDefault();document.getElementById('edit-form').submit();">{{__('Reestablecer')}}</a>
+                  @endif
                 <form id="edit-form" action="{{ route('categoria.destroy', $categorium) }}" method="POST" style="display: none;">
                     @csrf
                     {{method_field('DELETE')}}
