@@ -21,7 +21,7 @@ class MonitorsController extends Controller
     {
         //
         $monitores = User::where('active', '=', 0)->get();
-        return view('Monitores.index')->compact('monitors');
+        return view('Monitores.index')->with(compact('monitores'));
     }
 
     /**

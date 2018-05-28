@@ -111,6 +111,7 @@ class UsuariosController extends Controller
         else{
           $usuario->active = 0;
         }
+        $usuario->prestamo = "inactivo";
         $usuario->push();
         return redirect()->route('usuario.index');
     }

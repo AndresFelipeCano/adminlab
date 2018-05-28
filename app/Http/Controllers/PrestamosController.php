@@ -74,7 +74,7 @@ class PrestamosController extends Controller
         $this->validate($request, [
           'user_id' => 'required',
           'usuario_id' => 'required',
-          'equipo_id' => 'required',
+          'numero_equipo' => 'required',
           'today' => 'required|string',
           'estado' => 'required|string',
           'detalles' => 'required|string'
@@ -82,10 +82,10 @@ class PrestamosController extends Controller
         $prestamo = new Prestamo;
         $user = User::where('id_upb', '=', $request->user_id)->firstOrFail();
         $usuario = Usuario::where('id_upb', '=', $request->usuario_id)->firstOrFail();
-        $equipo = Equipo::where('id', '=', $request->equipo_id)->firstOrFail();
+        $equipo = Equipo::where('numero_equipo', '=', $request->numero_equipo)->firstOrFail();
         $prestamo->user_id = $request->user_id;
         $prestamo->usuario_id = $request->usuario_id;
-        $prestamo->equipo_id = $request->equipo_id;
+        $prestamo->equipo_id = $equipo->id;
         $prestamo->today = $request->today;
         $prestamo->estado = $request->estado;
         $prestamo->save();

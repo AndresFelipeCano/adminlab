@@ -54,14 +54,14 @@
           </div>
           <div class="form-group col-lg-6 col-md-6 col-sm-12">
             <label for="equipo_id">Equipo</label>
-            <select class="form-control" id="equipo_id" name="equipo_id" type="number">
+            <select class="form-control" id="numero_equipo" name="numero_equipo" type="number">
               <option disabled selected>Seleccionar Equipo</option>
               @foreach($equipos as $equipo)
-                <option name="equipo_id" value="{{$equipo->numero_equipo}}">{{$equipo->categoria->nombre}} - {{$equipo->numero_equipo}}</option>
+                <option name="numero_equipo" value="{{$equipo->numero_equipo}}">{{$equipo->categoria->nombre}} - {{$equipo->numero_equipo}}</option>
               @endforeach
             </select>
 
-            {!!$errors->first('equipo_id', '<span class=error>:message</span>')!!}
+            {!!$errors->first('numero_equipo', '<span class=error>:message</span>')!!}
           </div>
           <div class="form-group col-lg-6 col-md-6 col-sm-12">
             <label for="detalles">Detalles</label>

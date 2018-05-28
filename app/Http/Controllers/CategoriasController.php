@@ -20,7 +20,7 @@ class CategoriasController extends Controller
     public function index()
     {
         //
-        $categorias = Categoria::all();
+        $categorias = Categoria::where('active', '=', 0)->get();
         return view('Categoria.index')->with(compact('categorias'));
     }
 

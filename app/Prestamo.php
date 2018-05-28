@@ -8,7 +8,7 @@ class Prestamo extends Model
 {
     //
     protected $fillable = [
-      'user_id', 'usuario_id', 'equipo_id', 'today', 'estado'
+      'user_id', 'usuario_id', 'numero_equipo', 'today', 'estado'
     ];
 
     public function user()

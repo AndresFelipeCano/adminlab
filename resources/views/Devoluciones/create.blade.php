@@ -46,7 +46,7 @@
     </style>
   @endsection
   {{--Section: styles--}}
-  
+
   <div class="content-wrapper">
     <div class="container">
       <!-- Breadcrumbs-->
@@ -82,8 +82,8 @@
           <div class="form-group col-lg-6 col-md-6 col-sm-12">
             <label for="observaciones">Observaciones</label>
             <textarea class="form-control" name="observaciones" placeholder="Observaciones" value="{{old('observaciones')}}">
-            {!!$errors->first('observaciones', '<span class=error>:message</span>')!!}
             </textarea>
+            {!!$errors->first('observaciones', '<span class=error>:message</span>')!!}
           </div>
         </div>
         <div class="form-row">

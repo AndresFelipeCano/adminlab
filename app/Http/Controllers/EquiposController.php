@@ -34,7 +34,7 @@ class EquiposController extends Controller
     public function create()
     {
         //
-        $categorias =  Categoria::all();
+        $categorias =  Categoria::where('active', '=', 0)->get();
         $numero_equipo = Equipo::all()->count() + 1;
         return view('Equipos.create')->with(compact('categorias'))->with(compact('numero_equipo'));
     }

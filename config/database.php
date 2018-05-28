@@ -1,6 +1,6 @@
 -<?php
-/* uncomment this for elasticbeanstalk
-*/
+/* uncomment this for elasticbeanstalk*/
+
 define('RDS_HOSTNAME', $_SERVER['RDS_HOSTNAME']);
 define('RDS_USERNAME', $_SERVER['RDS_USERNAME']);
 define('RDS_PASSWORD', $_SERVER['RDS_PASSWORD']);
