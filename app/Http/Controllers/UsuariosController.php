@@ -3,6 +3,8 @@
 namespace App\Http\Controllers;
 
 use App\Usuario;
+use App\Prestamo;
+use App\Equipo;
 use Illuminate\Http\Request;
 
 class UsuariosController extends Controller
@@ -106,12 +108,22 @@ class UsuariosController extends Controller
     {
         //
         if($usuario->active === 0){
+          $prestamos = Prestamo::where('usuario_id', '=', $usuario->id)->where('estado', '=', 'activo')->get();
+          foreach($prestamos as $prestamo){
+            $prestamo->estado = "inactivo";
+            $prestamo->push();
+            $equipo = Equipo::where('id', '=', $prestamo->equipo_id)->firstOrFail();
+            if($equipo->estado !== "disponible"){
+                $equipo->estado = "disponible";
+            }
+            $equipo->push();
+          }
           $usuario->active = 1;
         }
         else{
           $usuario->active = 0;
         }
-        $usuario->prestamo = "inactivo";
+
         $usuario->push();
         return redirect()->route('usuario.index');
     }
