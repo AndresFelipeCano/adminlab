@@ -25,12 +25,13 @@ class PrestamosController extends Controller
     public function index()
     {
         //
-        $dates = Prestamo::where('created_at', '>', Carbon::now()->subDays(7))->pluck('today')->unique()->toArray();
+
+        $datesAll = Prestamo::select('today')->where('created_at', '>', Carbon::now()->subDays(7))->distinct()->get();
+        $dates[0] = "";
         $values[0] = 0;
-        $i = 0;
-        foreach($dates as $date){
-          $values[$i] =  count(Prestamo::where('created_at', '>', Carbon::now()->subDays(7))->where('today', $date));
-          $i++;
+        For($i = 0; $i < count($datesAll); $i++){
+          $values[$i] = count(Prestamo::where('today', '=', $datesAll[$i]->today)->get());
+          $dates[$i] = $datesAll[$i]->today;
         }
         $prestamos = Prestamo::where('created_at', '>', Carbon::now()->subDays(7))->where('active', '=', 0)->get();
         $last = Prestamo::orderBy('id', 'desc')->firstOrFail();
