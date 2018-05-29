@@ -43,9 +43,33 @@
             @foreach($devoluciones as $devolucion)
               <tr>
                 <td><a href="{{route('prestamo.show', $devolucion->prestamo)}}">{{$devolucion->prestamo->id}}</a></td>
-                <td><a href="{{route('equipo.show', $devolucion->prestamo->equipo)}}">{{$devolucion->prestamo->equipo->numero_equipo}}</a></td>
-                <td><a href="{{route('usuario.show', $devolucion->prestamo->usuario)}}">{{$devolucion->prestamo->usuario->nombre}} {{$devolucion->prestamo->usuario->apellido}} {{$devolucion->prestamo->usuario->id_upb}}</a></td>
-                <td><a href="{{route('monitor.show', $devolucion->user)}}">{{$devolucion->user->name}} {{$devolucion->user->id_upb}}</a></td>
+                <td>
+                  @if(Auth::user()->cargo === "administrador")
+                    <a href="{{route('equipo.show', $devolucion->prestamo->equipo)}}">{{$devolucion->prestamo->equipo->numero_equipo}}</a>
+                  @elseif($devolucion->prestamo->equipo->active === 0)
+                    <a href="{{route('equipo.show', $devolucion->prestamo->equipo)}}">{{$devolucion->prestamo->equipo->numero_equipo}}</a>
+                  @else
+                    {{$devolucion->prestamo->equipo->numero_equipo}}
+                  @endif
+                </td>
+                <td>
+                  @if(Auth::user()->cargo === "administrador")
+                    <a href="{{route('usuario.show', $devolucion->prestamo->usuario)}}">{{$devolucion->prestamo->usuario->nombre}} {{$devolucion->prestamo->usuario->apellido}} {{$devolucion->prestamo->usuario->id_upb}}</a>
+                  @elseif($devolucion->prestamo->usuario->active === 0)
+                    <a href="{{route('usuario.show', $devolucion->prestamo->usuario)}}">{{$devolucion->prestamo->usuario->nombre}} {{$devolucion->prestamo->usuario->apellido}} {{$devolucion->prestamo->usuario->id_upb}}</a>
+                  @else
+                    {{$devolucion->prestamo->usuario->nombre}} {{$devolucion->prestamo->usuario->apellido}} {{$devolucion->prestamo->usuario->id_upb}}
+                  @endif
+                </td>
+                <td>
+                  @if(Auth::user()->cargo === "administrador")
+                    <a href="{{route('monitor.show', $devolucion->user)}}">{{$devolucion->user->name}} {{$devolucion->user->id_upb}}</a>
+                  @elseif($devolucion->prestamo->user->active === 0)
+                    <a href="{{route('monitor.show', $devolucion->user)}}">{{$devolucion->user->name}} {{$devolucion->user->id_upb}}</a>
+                  @else
+                    {{$devolucion->user->name}} {{$devolucion->user->id_upb}}
+                  @endif
+                </td>
                 <td>
                   <div class="row">
                       {{$devolucion->estado}}

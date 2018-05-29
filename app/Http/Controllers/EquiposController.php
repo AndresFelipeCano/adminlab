@@ -119,8 +119,12 @@ class EquiposController extends Controller
     public function destroy(Equipo $equipo)
     {
         //
+        
         if($equipo->active === 0){
           $equipo->active = 1;
+          foreach($equipo->prestamos as $prestamo){
+            $prestamo->estado="inactivo";
+          }
         }
         else {
           // code...

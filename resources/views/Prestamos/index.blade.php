@@ -56,9 +56,33 @@
               @foreach($prestamos as $prestamo)
                 <tr>
                   <td><a href="{{route('prestamo.show', $prestamo)}}">{{$prestamo->id}} </a> </td>
-                  <td><a href="{{route('equipo.show', $prestamo->equipo)}}">{{$prestamo->equipo->observaciones}}</a> </td>
-                  <td><a href="{{route('usuario.show', $prestamo->usuario)}}">{{$prestamo->usuario->nombre}} {{$prestamo->usuario->apellido}} {{$prestamo->usuario->id_upb}}</a> </td>
-                  <td><a href="{{route('monitor.show', $prestamo->user)}}">{{$prestamo->user->name}} {{$prestamo->user->apellido}} {{$prestamo->user->id_upb}}</a></td>
+                  <td>
+                    @if(Auth::user()->cargo === "administrador")
+                      <a href="{{route('equipo.show', $prestamo->equipo)}}">{{$prestamo->equipo->observaciones}}</a>
+                    @elseif($prestamo->equipo->active === 0)
+                      <a href="{{route('equipo.show', $prestamo->equipo)}}">{{$prestamo->equipo->observaciones}}</a>
+                    @else
+                      {{$prestamo->equipo->observaciones}}
+                    @endif
+                  </td>
+                  <td>
+                    @if(Auth::user()->cargo === "administrador")
+                      <a href="{{route('usuario.show', $prestamo->usuario)}}">{{$prestamo->usuario->nombre}} {{$prestamo->usuario->apellido}} {{$prestamo->usuario->id_upb}}</a>
+                    @elseif($prestamo->usuario->active === 0)
+                      <a href="{{route('usuario.show', $prestamo->usuario)}}">{{$prestamo->usuario->nombre}} {{$prestamo->usuario->apellido}} {{$prestamo->usuario->id_upb}}</a>
+                    @else
+                      {{$prestamo->usuario->nombre}} {{$prestamo->usuario->apellido}} {{$prestamo->usuario->id_upb}}
+                    @endif
+                  </td>
+                  <td>
+                    @if(Auth::user()->cargo === "administrador")
+                      <a href="{{route('monitor.show', $prestamo->user)}}">{{$prestamo->user->name}} {{$prestamo->user->apellido}} {{$prestamo->user->id_upb}}</a>
+                    @elseif($prestamo->user->active === 0)
+                      <a href="{{route('monitor.show', $prestamo->user)}}">{{$prestamo->user->name}} {{$prestamo->user->apellido}} {{$prestamo->user->id_upb}}</a>
+                    @else
+                      {{$prestamo->user->name}} {{$prestamo->user->apellido}} {{$prestamo->user->id_upb}}
+                    @endif
+                  </td>
                   <td>{{$prestamo->estado}} </td>
                   <td>{{$prestamo->detalles_prestamo->detalles}}</td>
                   <td>{{$prestamo->created_at}}</td>

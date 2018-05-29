@@ -148,6 +148,8 @@ class PrestamosController extends Controller
         //
         if($prestamo->active === 0){
           $prestamo->active = 1;
+          $prestamo->estado = "inactivo";
+          $prestamo->equipo->estado = "disponible";
         }
         else{
           $prestamo->active = 0;

@@ -23,14 +23,14 @@
         <li class="breadcrumb-item">
           <a href="#">Ver</a>
         </li>
-        <li class="breadcrumb-item active">Monitor {{$monitor->nombre}}</li>
+        <li class="breadcrumb-item active">Monitor {{$monitor->name}} {{$monitor->id_upb}}</li>
       </ol>
     </div>
     <div class="table-responsive">
       <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
         <thead>
           <tr>
-            <th>ID</th>
+            <th>ID UPB</th>
             <th>Nombres</th>
             <th>Apellidos</th>
             <th>Correo</th>

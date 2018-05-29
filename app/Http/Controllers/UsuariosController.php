@@ -108,15 +108,12 @@ class UsuariosController extends Controller
     {
         //
         if($usuario->active === 0){
-          $prestamos = Prestamo::where('usuario_id', '=', $usuario->id)->where('estado', '=', 'activo')->get();
-          foreach($prestamos as $prestamo){
+          foreach($usuario->prestamos as $prestamo){
             $prestamo->estado = "inactivo";
-            $prestamo->push();
-            $equipo = Equipo::where('id', '=', $prestamo->equipo_id)->firstOrFail();
+            $equipo = $prestamo->equipo;
             if($equipo->estado !== "disponible"){
                 $equipo->estado = "disponible";
             }
-            $equipo->push();
           }
           $usuario->active = 1;
         }
